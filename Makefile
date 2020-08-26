@@ -22,17 +22,7 @@ build-docker:
 push: build-docker
 	docker image push $(NAMESPACE)/$(REPO):$(BUILD)
 
-build:
-	docker image build -f Dockerfile.build \
-		--build-arg GOOS=$(GOOS) \
-		--build-arg GOARCH=$(GOARCH) \
-		--build-arg VERSION=$(VERSION) \
-		--build-arg BUILD=$(BUILD) \
-		--build-arg DATE=$(DATE) \
-		--build-arg BINARY=$(BINARY) \
-		-t $(NAMESPACE)/$(REPO):$(VERSION)-$(BUILD)-builder .
-
-$(BINARY): build
+$(BINARY):
 	$(eval ID := $(shell docker create $(NAMESPACE)/$(REPO):$(VERSION)-$(BUILD)-builder))
 	@docker cp $(ID):/$(BINARY) .
 	@docker rm $(ID) >/dev/null
