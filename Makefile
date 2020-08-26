@@ -1,9 +1,10 @@
+GO=GO111MODULE=on go
 .PHONY: test gocomply_metaschema clean
 
 test:
 	@echo "Running Oscalkit test Utility"
 	@echo "Running remaining tests"
-	@go test -race -coverprofile=coverage.txt -covermode=atomic -v $(shell go list ./... | grep -v "/vendor/\|/test_util/src")
+	@go test -race -coverprofile=coverage.txt -covermode=atomic -v $(shell go list ./... | grep -v "/vendor/")
 
 gocomply_metaschema:
 ifeq ("$(wildcard $(GOPATH)/bin/gocomply_metaschema)","")
