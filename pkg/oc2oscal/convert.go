@@ -46,7 +46,7 @@ func Convert(repoUri, outputDirectory string) error {
 
 func convertComponent(component common.Component, metadata ssp.Metadata, outputDirectory string) error {
 	var plan ssp.SystemSecurityPlan
-	plan.Id = "TODO"
+	plan.Uuid = "TODO"
 	plan.Metadata = &metadata
 	plan.ImportProfile = &ssp.ImportProfile{
 		Href: "https://raw.githubusercontent.com/usnistgov/OSCAL/master/content/fedramp.gov/xml/FedRAMP_MODERATE-baseline_profile.xml",
