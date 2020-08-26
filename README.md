@@ -1,6 +1,4 @@
-# oscalkit
-
-[![CircleCI](https://circleci.com/gh/docker/oscalkit.svg?style=svg)](https://circleci.com/gh/docker/oscalkit) [![codecov](https://codecov.io/gh/docker/oscalkit/branch/master/graph/badge.svg)](https://codecov.io/gh/docker/oscalkit) [![GoDoc](https://godoc.org/github.com/docker/oscalkit?status.svg)](https://godoc.org/github.com/docker/oscalkit)
+# oscalkit ![Build CI](https://github.com/GoComply/oscalkit/workflows/Build%20CI/badge.svg)
 
 > In development. Since the OSCAL standard is still under active development, parsing errors may occur if running the included CLI tool against OSCAL documents that are developed against iterations of the schemas that aren't supported. Individual [Releases](https://github.com/docker/oscalkit/releases) of `oscalkit` will indicate in the notes which commits in the usnistgov/OSCAL repo against which the tool has been tested.
 
