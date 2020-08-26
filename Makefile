@@ -9,14 +9,7 @@ REPO := oscalkit
 BINARY=oscalkit_$(GOOS)_$(GOARCH)
 
 .DEFAULT_GOAL := $(BINARY)
-.PHONY: test build-docker push $(BINARY) clean generate
-
-generate:
-	docker build -t $(NAMESPACE)/$(REPO):generate -f Dockerfile.generate .
-	docker container run \
-		-v $$PWD:/go/src/github.com/docker/oscalkit \
-		$(NAMESPACE)/$(REPO):generate \
-		sh -c "go generate"
+.PHONY: test build-docker push $(BINARY) clean
 
 test:
 	@echo "Running Oscalkit test Utility"
@@ -39,8 +32,6 @@ build:
 		--build-arg BINARY=$(BINARY) \
 		-t $(NAMESPACE)/$(REPO):$(VERSION)-$(BUILD)-builder .
 
-# Builds binary for the OS/arch. Assumes that types have already been generated
-# via the "generate" target
 $(BINARY): build
 	$(eval ID := $(shell docker create $(NAMESPACE)/$(REPO):$(VERSION)-$(BUILD)-builder))
 	@docker cp $(ID):/$(BINARY) .
