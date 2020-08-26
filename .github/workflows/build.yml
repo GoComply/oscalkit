@@ -28,5 +28,8 @@ jobs:
     - name: Get Go dependencies
       run: go get -v -t -d ./...
 
-    - name: Build
+    - name: Build Everything
+      run: go build ./...
+
+    - name: Build oscalkit
       run: go build -o oscalkit -v cli/main.go
