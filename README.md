@@ -1,30 +1,14 @@
 # oscalkit ![Build CI](https://github.com/GoComply/oscalkit/workflows/Build%20CI/badge.svg)
 
-> In development. Since the OSCAL standard is still under active development, parsing errors may occur if running the included CLI tool against OSCAL documents that are developed against iterations of the schemas that aren't supported. Individual [Releases](https://github.com/docker/oscalkit/releases) of `oscalkit` will indicate in the notes which commits in the usnistgov/OSCAL repo against which the tool has been tested.
+> This project has been forked from [docker/oscalkit](https://github.com/docker/oscalkit). [Docker, Inc.](https://www.docker.com/company) did great service to the open source world by releasing initial oscalkit implementation under public domain license. Unfortunately, oscalkit development stalled after March 2019, while [upstream OSCAL](https://github.com/usnistgov/OSCAL) took leap steps and almost re-designed the OSCAL from scratch rendering original oscalkit unusable. This fork is attempt to keep original code lively and re-build community around it.
 
-Barebones Go SDK for the [Open Security Controls Assessment Language (OSCAL)](https://csrc.nist.gov/Projects/Open-Security-Controls-Assessment-Language) which is in development by the [National Institute of Standards and Technology (NIST)](https://www.nist.gov/). A CLI tool is also included for processing OSCAL documents, converting between OSCAL-formatted XML, JSON and YAML and for converting from [OpenControl](https://open-control.org/) projects in to OSCAL. The tool also supports Go source code generation from OSCAL formatted catalog and profile artifacts.
+Barebones Go SDK for the [Open Security Controls Assessment Language (OSCAL)](https://csrc.nist.gov/Projects/Open-Security-Controls-Assessment-Language) which is in development by the [National Institute of Standards and Technology (NIST)](https://www.nist.gov/). A CLI tool is also included for processing OSCAL documents, converting between OSCAL-formatted XML, JSON and YAML. For conversion of Your existing SSPs in form of [OpenControl](https://open-control.org/) or traditional [DOCX files](https://github.com/GoComply/fedramp/issues/3) projects in to OSCAL visit sister project [GoComply/fedramp](https://github.com/GoComply/fedramp).
 
 Documentation for the OSCAL standard can be found at https://pages.nist.gov/OSCAL.
 
 ## Installing
 
-You can download the appropriate `oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/docker/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable. A Homebrew recipe is also available for macOS along with a [Docker image](https://hub.docker.com/r/docker/oscalkit/) which has been published to Docker Hub.
-
-### Homebrew
-
-    $ brew tap docker/homebrew-oscalkit
-    $ brew install oscalkit
-
-### Docker
-
-> Running the `oscalkit` Docker container requires either bind-mounting the directory containing your source files or passing file contents in to the command via stdin.
-
-    $ docker pull docker/oscalkit:0.2.0
-    $ docker run -it --rm -v $PWD:/data -w /data docker/oscalkit:0.2.0 convert oscal-core.xml
-
-via stdin:
-
-    $ docker run -it --rm docker/oscalkit:0.2.0 convert < oscal-core.xml
+You can download the appropriate `oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/gocomply/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable.
 
 ## Usage
 
@@ -40,7 +24,7 @@ VERSION:
 
 
 COMMANDS:
-     convert         convert between one or more OSCAL file formats and from OpenControl format
+     convert         convert between one or more OSCAL file formats and to HTML format
      validate        validate files against OSCAL XML and JSON schemas
      sign            sign OSCAL JSON artifacts
      generate        generates go code against provided profile
@@ -116,34 +100,6 @@ The following signing algorithms are supported:
 Sign OSCAL-formatted JSON using a PEM-encoded private key file and the PS256 signing algorithm:
 
     $ oscalkit sign --key jws-example-key.pem --alg PS256 NIST_SP-800-53_rev4_catalog.json
-
-### Convert from OpenControl project to OSCAL [Experimental]
-
-> This feature has been temporarily disabled pending https://github.com/usnistgov/OSCAL/issues/216 and https://github.com/usnistgov/OSCAL/issues/215
-
-`oscalkit` also supports converting OpenControl projects to OSCAL-formatted JSON. You will need both the path to the `opencontrol.yaml` file and the `opencontrols/` directory which is created when you run a `compliance-masonry get` command.
-
-```
-NAME:
-   oscalkit convert opencontrol - convert from OpenControl format to OSCAL "implementation" format
-
-USAGE:
-   oscalkit convert opencontrol [command options] [opencontrol.yaml-filepath] [opencontrols-dir-path]
-
-DESCRIPTION:
-   Convert OpenControl-formatted "component" and "OpenControl" YAML into
-   OSCAL-formatted "implementation" layer JSON
-
-OPTIONS:
-   --yaml, -y  Generate YAML in addition to JSON
-   --xml, -x   Generate XML in addition to JSON
-```
-
-### Examples
-
-Convert OpenControl project to OSCAL-formatted JSON:
-
-    $ oscalkit convert opencontrol ./opencontrol.yaml ./opencontrols/
 
 ### Validate against XML and JSON schemas
 
