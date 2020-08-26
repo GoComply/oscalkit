@@ -1,0 +1,43 @@
+name: Regenerate from usnistgov/OSCAL
+on:
+  schedule:
+  - cron: "0 0 * * *"
+  push:
+    branches: [ master ]
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.13
+      - name: Install dependencies
+        uses: mstksg/get-package@master
+        with:
+                apt-get: libxml2-utils
+      - uses: actions/checkout@v2
+      - name: Regenerate models
+        run: |
+          export PATH=~/go/bin:$PATH
+          make generate
+      - name: Clean-up
+        run: |
+          make clean
+          git checkout -- go.mod
+          git checkout -- go.sum
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_MESSAGE: 'Rebuilding oscalkit models to match latest development at upstream OSCAL'
+          COMMIT_AUTHOR_EMAIL: isimluk@fedorapeople.org
+          COMMIT_AUTHOR_NAME: Github Actions Automations
+          PULL_REQUEST_TITLE: 'Rebuilding oscalkit models to match latest development at upstream OSCAL'
+          PULL_REQUEST_BODY: |
+            Automated rebuild of oscalkit models to match latest changes at https://github.com/usnistgov/OSCAL'
+          PULL_REQUEST_BRANCH: make-generate
+          BRANCH_SUFFIX: short-commit-hash
+      - name: Check output environment variable
+        run: echo "Pull Request Number - $PULL_REQUEST_NUMBER"

@@ -18,6 +18,9 @@ endif
 generate: OSCAL gocomply_metaschema
 	gocomply_metaschema generate ./OSCAL/src/metaschema github.com/docker/oscalkit types/oscal
 
+OSCAL:
+	git clone --depth 1 https://github.com/usnistgov/OSCAL
+
 clean:
 	rm -rf ./OSCAL
 	rm -rf ./oscalkit
