@@ -1,5 +1,5 @@
 GO=GO111MODULE=on go
-.PHONY: test gocomply_metaschema clean
+.PHONY: test gocomply_metaschema clean vendor
 
 test:
 	@echo "Running Oscalkit test Utility"
@@ -16,3 +16,8 @@ generate: OSCAL gocomply_metaschema
 
 clean:
 	rm -rf ./OSCAL
+
+vendor:
+	$(GO) mod tidy
+	$(GO) mod vendor
+	$(GO) mod verify
