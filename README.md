@@ -6,16 +6,6 @@ Barebones Go SDK for the [Open Security Controls Assessment Language (OSCAL)](ht
 
 Documentation for the OSCAL standard can be found at https://pages.nist.gov/OSCAL.
 
-## Supported OSCAL Components
-
-The following OSCAL components are currently supported:
-
-|Component|Schemas|
-|---------|-------|
-|[Catalog](https://pages.nist.gov/OSCAL/concepts/#oscal-catalogs)|[XSD](https://github.com/usnistgov/OSCAL/blob/master/schema/xml/oscal-catalog-schema.xsd) \| [JSON schema](https://github.com/usnistgov/OSCAL/blob/master/schema/json/oscal-catalog-schema.json) \| [metaschema](https://github.com/usnistgov/OSCAL/blob/master/schema/metaschema/oscal-catalog-metaschema.xml)|
-|[Profile](https://pages.nist.gov/OSCAL/concepts/#oscal-profiles)|[XSD](https://github.com/usnistgov/OSCAL/blob/master/schema/xml/oscal-profile-schema.xsd) \| [JSON schema](https://github.com/usnistgov/OSCAL/blob/master/schema/json/oscal-profile-schema.json) \| [metaschema](https://github.com/usnistgov/OSCAL/blob/master/schema/metaschema/oscal-profile-metaschema.xml)|
-|Implementation (WIP)|Currently based on a combination of the model being developed in [usnistgov/OSCAL#216](https://github.com/usnistgov/OSCAL/issues/216) and the component definition prototype in [this Gist](https://gist.github.com/anweiss/8afd321b6bf2a9d4e1679657a1b8f2fe)|
-
 ## Installing
 
 You can download the appropriate `oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/docker/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable. A Homebrew recipe is also available for macOS along with a [Docker image](https://hub.docker.com/r/docker/oscalkit/) which has been published to Docker Hub.
