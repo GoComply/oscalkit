@@ -11,13 +11,6 @@ builds:
     goarch:
       - amd64
 
-dockers:
-  - image: docker/oscalkit
-    dockerfile: Dockerfile.release
-    tag_templates:
-      - "{{ .Version }}"
-      - latest
-
 brew:
   name: oscalkit
   github:
