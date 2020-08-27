@@ -8,16 +8,16 @@ Documentation for the OSCAL standard can be found at https://pages.nist.gov/OSCA
 
 ## Installing
 
-You can download the appropriate `oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/gocomply/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable.
+You can download the appropriate `gocomply_oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/gocomply/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable.
 
 ## Usage
 
 ```
 NAME:
-   oscalkit - OSCAL toolkit
+   gocomply_oscalkit - OSCAL toolkit
 
 USAGE:
-   oscalkit [global options] command [command options] [arguments...]
+   gocomply_oscalkit [global options] command [command options] [arguments...]
 
 VERSION:
    0.2.0
@@ -39,14 +39,14 @@ GLOBAL OPTIONS:
 
 ### Convert between XML and JSON
 
-`oscalkit` can be used to convert one or more source files between OSCAL-formatted XML and JSON.
+`gocomply_oscalkit` can be used to convert one or more source files between OSCAL-formatted XML and JSON.
 
 ```
 NAME:
-   oscalkit convert oscal - convert between one or more OSCAL file formats
+   gocomply_oscalkit convert oscal - convert between one or more OSCAL file formats
 
 USAGE:
-   oscalkit convert oscal [command options] [source-files...]
+   gocomply_oscalkit convert oscal [command options] [source-files...]
 
 DESCRIPTION:
    Convert between OSCAL-formatted XML and JSON files. The command accepts
@@ -63,22 +63,22 @@ OPTIONS:
 
 Convert OSCAL-formatted NIST 800-53 declarations from XML to JSON:
 
-    $ oscalkit convert oscal SP800-53-declarations.xml
+    $ gocomply_oscalkit convert oscal SP800-53-declarations.xml
 
 Convert OSCAL-formatted NIST 800-53 declarations from XML to JSON via STDIN (note the use of "-"):
 
-    $ cat SP800-53-declarations.xml | oscalkit convert oscal -
+    $ cat SP800-53-declarations.xml | gocomply_oscalkit convert oscal -
 
 ### Signing OSCAL JSON with JWS
 
-`oscalkit` can be used to sign OSCAL-formatted JSON artifacts using JSON Web Signature (JWS)
+`gocomply_oscalkit` can be used to sign OSCAL-formatted JSON artifacts using JSON Web Signature (JWS)
 
 ```
 NAME:
-   oscalkit sign - sign OSCAL JSON artifacts
+   gocomply_oscalkit sign - sign OSCAL JSON artifacts
 
 USAGE:
-   oscalkit sign [command options] [files...]
+   gocomply_oscalkit sign [command options] [files...]
 
 OPTIONS:
    --key value, -k value  private key file for signing. Must be in PEM or DER formats. Supports RSA/EC keys and X.509 certificats with embedded RSA/EC keys
@@ -99,7 +99,7 @@ The following signing algorithms are supported:
 
 Sign OSCAL-formatted JSON using a PEM-encoded private key file and the PS256 signing algorithm:
 
-    $ oscalkit sign --key jws-example-key.pem --alg PS256 NIST_SP-800-53_rev4_catalog.json
+    $ gocomply_oscalkit sign --key jws-example-key.pem --alg PS256 NIST_SP-800-53_rev4_catalog.json
 
 ### Validate against XML and JSON schemas
 
@@ -107,10 +107,10 @@ The tool supports validation of OSCAL-formatted XML and JSON files against the c
 
 ```
 NAME:
-   oscalkit validate - validate files against OSCAL XML and JSON schemas
+   gocomply_oscalkit validate - validate files against OSCAL XML and JSON schemas
 
 USAGE:
-   oscalkit validate [command options] [files...]
+   gocomply_oscalkit validate [command options] [files...]
 
 DESCRIPTION:
    Validate OSCAL-formatted XML files against a specific XML schema (.xsd)
@@ -121,7 +121,7 @@ DESCRIPTION:
 
 Validate FedRAMP profile in OSCAL-formatted JSON against the corresponding JSON schema
 
-    $ oscalkit validate -s oscal-core.json fedramp-annotated-wrt-SP800-53catalog.json
+    $ gocomply_oscalkit validate -s oscal-core.json fedramp-annotated-wrt-SP800-53catalog.json
 
 ## Developing
 
@@ -151,7 +151,7 @@ Compile for Windows:
 
 ### Website and documentation
 
-Both the website and corresponding documentation are being developed in `docs/`. The content is developed using the [Hugo](https://gohugo.io/) framework. The static content is generated and published in `docs/public`, which is a separate Git worktree that is tied to the [`gh-pages`](https://github.com/docker/oscalkit/tree/gh-pages) branch and publicly accessible via https://docker.github.io/oscalkit.
+Both the website and corresponding documentation are being developed in `docs/`. The content is developed using the [Hugo](https://gohugo.io/) framework. The static content is generated and published in `docs/public`, which is a separate Git worktree.
 
 The GoDoc for the SDK can be found [here](https://godoc.org/github.com/docker/oscalkit).
 

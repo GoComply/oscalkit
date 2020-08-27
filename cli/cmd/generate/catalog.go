@@ -40,7 +40,7 @@ var Catalog = cli.Command{
 	},
 	Before: func(c *cli.Context) error {
 		if profilePath == "" {
-			return cli.NewExitError("oscalkit generate is missing the --profile flag", 1)
+			return cli.NewExitError("gocomply_oscalkit generate is missing the --profile flag", 1)
 		}
 		return nil
 	},

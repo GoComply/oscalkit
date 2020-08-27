@@ -35,15 +35,15 @@ var Sign = cli.Command{
 	},
 	Before: func(c *cli.Context) error {
 		if privKey == "" {
-			return cli.NewExitError("oscalkit sign is missing the --key flag", 1)
+			return cli.NewExitError("gocomply_oscalkit sign is missing the --key flag", 1)
 		}
 
 		if alg == "" {
-			return cli.NewExitError("oscalkit sign is missing the --alg flag", 1)
+			return cli.NewExitError("gocomply_oscalkit sign is missing the --alg flag", 1)
 		}
 
 		if c.NArg() < 1 {
-			return cli.NewExitError("oscalkit sign requires at least one argument", 1)
+			return cli.NewExitError("gocomply_oscalkit sign requires at least one argument", 1)
 		}
 
 		return nil

@@ -28,7 +28,7 @@ var ConvertHTML = cli.Command{
 				return nil
 			}
 
-			return cli.NewExitError("oscalkit convert html requires at one argument", 1)
+			return cli.NewExitError("gocomply_oscalkit convert html requires at one argument", 1)
 		}
 
 		return nil

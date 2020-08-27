@@ -16,7 +16,7 @@ var Validate = cli.Command{
 	ArgsUsage:   "[files...]",
 	Before: func(c *cli.Context) error {
 		if c.NArg() < 1 {
-			return cli.NewExitError("oscalkit validate requires at least one argument", 1)
+			return cli.NewExitError("gocomply_oscalkit validate requires at least one argument", 1)
 		}
 		return nil
 	},

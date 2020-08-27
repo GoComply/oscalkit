@@ -20,7 +20,7 @@ func Execute() error {
 	}
 
 	app := cli.NewApp()
-	app.Name = "oscalkit"
+	app.Name = "gocomply_oscalkit"
 	app.Version = appVersion
 	app.Usage = "OSCAL toolkit"
 	app.Flags = []cli.Flag{

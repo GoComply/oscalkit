@@ -53,7 +53,7 @@ var ConvertOSCAL = cli.Command{
 				return nil
 			}
 
-			return cli.NewExitError("oscalkit convert requires at least one argument", 1)
+			return cli.NewExitError("gocomply_oscalkit convert requires at least one argument", 1)
 		}
 
 		if c.NArg() > 1 {

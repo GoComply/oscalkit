@@ -46,7 +46,7 @@ var Implementation = cli.Command{
 	},
 	Before: func(c *cli.Context) error {
 		if excelSheet == "" {
-			return cli.NewExitError("oscalkit implementation is missing --excel flag", 1)
+			return cli.NewExitError("gocomply_oscalkit implementation is missing --excel flag", 1)
 		}
 		return nil
 	},
