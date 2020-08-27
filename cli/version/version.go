@@ -2,6 +2,6 @@ package version
 
 // Build details
 var (
-	Version string
-	Date    string
+	Version = "0.3.0"
+	Date    = "2020-08-27"
 )

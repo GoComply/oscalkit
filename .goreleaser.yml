@@ -1,7 +1,6 @@
 builds:
   - binary: gocomply_oscalkit
     main: ./cli/gocomply_oscalkit/main.go
-    ldflags: -s -w -X github.com/gocomply/oscalkit/cli/version.Version={{.Version}} -X github.com/gocomply/oscalkit/cli/version.Date={{.Date}}
     env:
       - CGO_ENABLED=0
     goos:
@@ -9,16 +8,52 @@ builds:
       - darwin
       - linux
     goarch:
+      - 386
       - amd64
+      - arm
+      - arm64
 
-brew:
-  name: oscalkit
-  github:
-    owner: gocomply
-    name: homebrew-oscalkit
-  commit_author:
-    name: Šimon Lukašík
-    email: isimluk@fedoraproject.org
-  homepage: https://github.com/gocomply/oscalkit
-  dependencies:
-    - libxml2
+archives:
+- replacements:
+    darwin: macOS
+    linux: Linux
+    windows: Windows
+    386: i386
+    amd64: x86_64
+
+  format_overrides:
+    - goos: windows
+      format: zip
+
+checksum:
+  name_template: 'checksums.txt'
+  algorithm: sha256
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+
+nfpms:
+  - id: oscalkit
+
+    file_name_template: "{{ .ProjectName }}-{{ .Version }}-{{ .Release }}.{{ .Arch }}"
+    replacements:
+      386: i686
+      amd64: x86_64
+      arm: aarch32
+      arm64: aarch64
+
+    formats:
+      - deb
+      - rpm
+
+    bindir: /usr/bin
+
+    homepage: github.com/gocomply/oscalkit
+    license: CC0
+    description:  NIST OSCAL SDK and CLI
+    release: 1
