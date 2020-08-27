@@ -13,7 +13,7 @@ import (
 
 // Execute ...
 func Execute() error {
-	appVersion := fmt.Sprintf("%s-%s (Built: %s)\n", version.Version, version.Build, version.Date)
+	appVersion := fmt.Sprintf("%s-%s (Built: %s)\n", version.Version, version.Date)
 
 	cli.VersionPrinter = func(c *cli.Context) {
 		fmt.Println(appVersion)

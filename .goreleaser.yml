@@ -1,7 +1,7 @@
 builds:
   - binary: gocomply_oscalkit
     main: ./cli/gocomply_oscalkit/main.go
-    ldflags: -s -w -X github.com/gocomply/oscalkit/cli/version.Version={{.Version}} -X github.com/gocomply/oscalkit/cli/version.Build={{.ShortCommit}} -X github.com/gocomply/oscalkit/cli/version.Date={{.Date}}
+    ldflags: -s -w -X github.com/gocomply/oscalkit/cli/version.Version={{.Version}} -X github.com/gocomply/oscalkit/cli/version.Date={{.Date}}
     env:
       - CGO_ENABLED=0
     goos:
