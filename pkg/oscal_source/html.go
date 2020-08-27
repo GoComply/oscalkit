@@ -3,9 +3,9 @@ package oscal_source
 import (
 	"bytes"
 	"errors"
-	"github.com/docker/oscalkit/pkg/bundled"
-	"github.com/docker/oscalkit/pkg/oscal/constants"
-	"github.com/docker/oscalkit/pkg/xslt"
+	"github.com/gocomply/oscalkit/pkg/bundled"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/pkg/xslt"
 )
 
 func (s *OSCALSource) HTML() (*bytes.Buffer, error) {

@@ -1,4 +1,4 @@
-module github.com/docker/oscalkit
+module github.com/gocomply/oscalkit
 
 require (
 	github.com/markbates/pkger v0.14.0

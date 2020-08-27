@@ -2,11 +2,11 @@
 package plan_of_action_and_milestones
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/system_security_plan"
+	"github.com/gocomply/oscalkit/types/oscal/system_security_plan"
 
-	"github.com/docker/oscalkit/types/oscal/assessment_common"
+	"github.com/gocomply/oscalkit/types/oscal/assessment_common"
 )
 
 // A plan of action and milestones, such as those required by FedRAMP.

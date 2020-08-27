@@ -2,11 +2,11 @@
 package assessment_results
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/system_security_plan"
+	"github.com/gocomply/oscalkit/types/oscal/system_security_plan"
 
-	"github.com/docker/oscalkit/types/oscal/assessment_common"
+	"github.com/gocomply/oscalkit/types/oscal/assessment_common"
 )
 
 // Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.

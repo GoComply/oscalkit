@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/docker/oscalkit/cli/cmd"
+	"github.com/gocomply/oscalkit/cli/cmd"
 )
 
 func main() {

@@ -10,10 +10,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/docker/oscalkit/generator"
-	"github.com/docker/oscalkit/impl"
-	"github.com/docker/oscalkit/templates"
-	"github.com/docker/oscalkit/types/oscal/implementation"
+	"github.com/gocomply/oscalkit/generator"
+	"github.com/gocomply/oscalkit/impl"
+	"github.com/gocomply/oscalkit/templates"
+	"github.com/gocomply/oscalkit/types/oscal/implementation"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

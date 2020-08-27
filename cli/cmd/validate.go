@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/docker/oscalkit/pkg/oscal_source"
+	"github.com/gocomply/oscalkit/pkg/oscal_source"
 	"github.com/urfave/cli"
 )
 

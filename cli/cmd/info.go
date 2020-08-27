@@ -3,9 +3,9 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/docker/oscalkit/pkg/oscal/constants"
-	"github.com/docker/oscalkit/pkg/oscal_source"
-	"github.com/docker/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/pkg/oscal_source"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
 	"github.com/urfave/cli"
 )
 

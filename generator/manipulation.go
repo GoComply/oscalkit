@@ -3,9 +3,9 @@ package generator
 import (
 	"fmt"
 
-	"github.com/docker/oscalkit/impl"
-	"github.com/docker/oscalkit/types/oscal/catalog"
-	"github.com/docker/oscalkit/types/oscal/profile"
+	"github.com/gocomply/oscalkit/impl"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
 )
 
 // ProcessAddition processes additions of a profile

@@ -2,9 +2,9 @@
 package component_definition
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/validation_common_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_common_root"
 )
 
 // A collection of component descriptions, which may optionally be grouped by capability.

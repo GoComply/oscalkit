@@ -2,11 +2,11 @@
 package assessment_common
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/system_security_plan"
+	"github.com/gocomply/oscalkit/types/oscal/system_security_plan"
 
-	"github.com/docker/oscalkit/types/oscal/nominal_catalog"
+	"github.com/gocomply/oscalkit/types/oscal/nominal_catalog"
 )
 
 // NOT TO BE USED FOR A BASE METASCHEMA ONLY FOR A MODULE

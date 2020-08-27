@@ -2,7 +2,7 @@
 package nominal_catalog
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 )
 
 // NOT TO BE USED FOR A BASE METASCHEMA ONLY FOR A MODULE

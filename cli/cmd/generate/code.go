@@ -7,10 +7,10 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/docker/oscalkit/generator"
-	"github.com/docker/oscalkit/pkg/oscal_source"
-	"github.com/docker/oscalkit/templates"
-	"github.com/docker/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/generator"
+	"github.com/gocomply/oscalkit/pkg/oscal_source"
+	"github.com/gocomply/oscalkit/templates"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

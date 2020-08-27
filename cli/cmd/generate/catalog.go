@@ -8,8 +8,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/docker/oscalkit/generator"
-	"github.com/docker/oscalkit/pkg/oscal_source"
+	"github.com/gocomply/oscalkit/generator"
+	"github.com/gocomply/oscalkit/pkg/oscal_source"
 	"github.com/urfave/cli"
 )
 

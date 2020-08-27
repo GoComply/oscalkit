@@ -2,7 +2,7 @@
 package validation_common_root
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 )
 
 // NOT TO BE USED IN A METASCHEMA

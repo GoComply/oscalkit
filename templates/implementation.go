@@ -18,7 +18,7 @@ const implementationTemplate = `
 package {{.PackageName}}
 
 import (
-	"github.com/docker/oscalkit/types/oscal/implementation"
+	"github.com/gocomply/oscalkit/types/oscal/implementation"
 )
 
 var ImplementationGenerated = implementation.Implementation{

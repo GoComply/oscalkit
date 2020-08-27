@@ -4,9 +4,9 @@ package profile
 import (
 	"encoding/xml"
 
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/nominal_catalog"
+	"github.com/gocomply/oscalkit/types/oscal/nominal_catalog"
 )
 
 // Each OSCAL profile is defined by a Profile element

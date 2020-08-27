@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/docker/oscalkit/impl"
-	"github.com/docker/oscalkit/types/oscal"
-	"github.com/docker/oscalkit/types/oscal/catalog"
-	"github.com/docker/oscalkit/types/oscal/profile"
+	"github.com/gocomply/oscalkit/impl"
+	"github.com/gocomply/oscalkit/types/oscal"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
 	"github.com/sirupsen/logrus"
 )
 

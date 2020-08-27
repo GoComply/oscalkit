@@ -4,9 +4,9 @@ package system_security_plan
 import (
 	"encoding/xml"
 
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/validation_common_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_common_root"
 )
 
 // A system security plan, such as those described in NIST SP 800-18

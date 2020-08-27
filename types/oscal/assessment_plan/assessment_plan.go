@@ -2,11 +2,11 @@
 package assessment_plan
 
 import (
-	"github.com/docker/oscalkit/types/oscal/validation_root"
+	"github.com/gocomply/oscalkit/types/oscal/validation_root"
 
-	"github.com/docker/oscalkit/types/oscal/system_security_plan"
+	"github.com/gocomply/oscalkit/types/oscal/system_security_plan"
 
-	"github.com/docker/oscalkit/types/oscal/assessment_common"
+	"github.com/gocomply/oscalkit/types/oscal/assessment_common"
 )
 
 // An assessment plan, such as those provided by a FedRAMP assessor.

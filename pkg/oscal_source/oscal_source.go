@@ -2,8 +2,8 @@ package oscal_source
 
 import (
 	"fmt"
-	"github.com/docker/oscalkit/pkg/oscal/constants"
-	"github.com/docker/oscalkit/types/oscal"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/types/oscal"
 	"io"
 	"os"
 	"path/filepath"

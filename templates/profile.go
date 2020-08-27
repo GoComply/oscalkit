@@ -17,8 +17,8 @@ package {{.PackageName}}
 import (
 	"net/url"
 
-	"github.com/docker/oscalkit/types/oscal/catalog"
-	"github.com/docker/oscalkit/types/oscal/profile"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
 
 )
 

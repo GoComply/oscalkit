@@ -12,7 +12,7 @@ const catalogTemplate = `
 package {{.PackageName}}
 
 import (
-	"github.com/docker/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
 )
 
 var ApplicableControls = []catalog.Catalog{

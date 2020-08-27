@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/docker/oscalkit/types/oscal"
-	"github.com/docker/oscalkit/types/oscal/profile"
+	"github.com/gocomply/oscalkit/types/oscal"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
 )
 
 // HTTPFilePath map of http resource against filepath to lessen downloads

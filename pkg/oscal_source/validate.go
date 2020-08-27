@@ -2,10 +2,10 @@ package oscal_source
 
 import (
 	"errors"
-	"github.com/docker/oscalkit/pkg/bundled"
-	"github.com/docker/oscalkit/pkg/json_validation"
-	"github.com/docker/oscalkit/pkg/oscal/constants"
-	"github.com/docker/oscalkit/pkg/xml_validation"
+	"github.com/gocomply/oscalkit/pkg/bundled"
+	"github.com/gocomply/oscalkit/pkg/json_validation"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/pkg/xml_validation"
 )
 
 type validator func(schemaPath, inputFile string) error

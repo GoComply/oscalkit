@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/docker/oscalkit/cli/cmd/convert"
-	"github.com/docker/oscalkit/cli/cmd/generate"
-	"github.com/docker/oscalkit/cli/version"
+	"github.com/gocomply/oscalkit/cli/cmd/convert"
+	"github.com/gocomply/oscalkit/cli/cmd/generate"
+	"github.com/gocomply/oscalkit/cli/version"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

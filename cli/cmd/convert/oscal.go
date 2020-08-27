@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/docker/oscalkit/types/oscal"
+	"github.com/gocomply/oscalkit/types/oscal"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

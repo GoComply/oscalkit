@@ -8,11 +8,11 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/docker/oscalkit/pkg/oscal/constants"
-	"github.com/docker/oscalkit/types/oscal/catalog"
-	"github.com/docker/oscalkit/types/oscal/component_definition"
-	"github.com/docker/oscalkit/types/oscal/profile"
-	ssp "github.com/docker/oscalkit/types/oscal/system_security_plan"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/component_definition"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
+	ssp "github.com/gocomply/oscalkit/types/oscal/system_security_plan"
 	yaml "gopkg.in/yaml.v2"
 )
 

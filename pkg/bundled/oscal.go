@@ -2,7 +2,7 @@ package bundled
 
 import (
 	"fmt"
-	"github.com/docker/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	"github.com/markbates/pkger"
 	"github.com/markbates/pkger/pkging"
 	"io"

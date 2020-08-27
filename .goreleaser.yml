@@ -1,7 +1,7 @@
 builds:
   - binary: oscalkit
     main: ./cli/main.go
-    ldflags: -s -w -X github.com/docker/oscalkit/cli/version.Version={{.Version}} -X github.com/docker/oscalkit/cli/version.Build={{.ShortCommit}} -X github.com/docker/oscalkit/cli/version.Date={{.Date}}
+    ldflags: -s -w -X github.com/gocomply/oscalkit/cli/version.Version={{.Version}} -X github.com/gocomply/oscalkit/cli/version.Build={{.ShortCommit}} -X github.com/gocomply/oscalkit/cli/version.Date={{.Date}}
     env:
       - CGO_ENABLED=0
     goos:
@@ -14,11 +14,11 @@ builds:
 brew:
   name: oscalkit
   github:
-    owner: docker
+    owner: gocomply
     name: homebrew-oscalkit
   commit_author:
-    name: Andrew Weiss
-    email: anweiss@docker.com
-  homepage: https://github.com/docker/oscalkit
+    name: Šimon Lukašík
+    email: isimluk@fedoraproject.org
+  homepage: https://github.com/gocomply/oscalkit
   dependencies:
     - libxml2

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/docker/oscalkit/types/oscal/implementation"
+	"github.com/gocomply/oscalkit/types/oscal/implementation"
 )
 
 const (

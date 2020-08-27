@@ -4,9 +4,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/docker/oscalkit/types/oscal/catalog"
-	"github.com/docker/oscalkit/types/oscal/implementation"
-	"github.com/docker/oscalkit/types/oscal/profile"
+	"github.com/gocomply/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/implementation"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
 	uuid "github.com/satori/go.uuid"
 )
 

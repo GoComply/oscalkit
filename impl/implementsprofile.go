@@ -4,7 +4,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/docker/oscalkit/types/oscal/implementation"
+	"github.com/gocomply/oscalkit/types/oscal/implementation"
 )
 
 func detokenizeParameterString(paramStr string) (string, string) {
