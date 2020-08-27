@@ -8,7 +8,11 @@ Documentation for the OSCAL standard can be found at https://pages.nist.gov/OSCA
 
 ## Installing
 
-You can download the appropriate `gocomply_oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/gocomply/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable.
+You can download the appropriate `gocomply_oscalkit` command-line utility for your system from the [GitHub Releases](https://github.com/gocomply/oscalkit/releases) page. You can move it to an appropriate directory listed in your `$PATH` environment variable. Alternatively, You can fetch latest greatest version by running
+
+```
+  go get -u github.com/gocomply/oscalkit/cli/gocomply_oscalkit
+```
 
 ## Usage
 
