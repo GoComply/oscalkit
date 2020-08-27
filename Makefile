@@ -3,7 +3,7 @@ GO=GO111MODULE=on go
 
 build:
 	go build ./...
-	go build -o oscalkit -v cli/main.go
+	go build ./cli/gocomply_oscalkit
 
 test:
 	@echo "Running Oscalkit test Utility"
@@ -23,7 +23,7 @@ OSCAL:
 
 clean:
 	rm -rf ./OSCAL
-	rm -rf ./oscalkit
+	rm -rf ./gocomply_oscalkit
 
 vendor:
 	$(GO) mod tidy

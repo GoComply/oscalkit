@@ -5,7 +5,6 @@
 *.dll
 *.so
 *.dylib
-oscalkit_*
 
 # Test binary, build with `go test -c`
 *.test
@@ -18,3 +17,4 @@ dist/
 
 docs/public/
 /OSCAL/
+/gocomply_oscalkit
