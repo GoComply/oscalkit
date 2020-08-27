@@ -125,11 +125,11 @@ Validate FedRAMP profile in OSCAL-formatted JSON against the corresponding JSON 
 
 ## Developing
 
-`oscalkit` is developed with [Go](https://golang.org/) (1.11+). If you have Docker installed, the included `Makefile` can be used to run unit tests and compile the application for Linux, macOS and Windows. Otherwise, the native Go toolchain can be used.
+`oscalkit` is developed with [Go](https://golang.org/) (1.13+). If you have Docker installed, the included `Makefile` can be used to run unit tests and compile the application for Linux, macOS and Windows. Otherwise, the native Go toolchain can be used.
 
 ### Dependency management
 
-Dependencies are managed with [Go 1.11 Modules](https://github.com/golang/go/wiki/Modules). The `vendor/` folder containing the dependencies is checked in with the source for backwards compatibility with previous versions of Go. When using Go 1.11 with `GO111MODULE=on`, you can verify the dependencies as follows:
+Dependencies are managed with [Go 1.11 Modules](https://github.com/golang/go/wiki/Modules). The `vendor/` folder containing the dependencies is checked in with the source for backwards compatibility with previous versions of Go. When using Go 1.11+ with `GO111MODULE=on`, you can verify the dependencies as follows:
 
     $ go mod verify
 
