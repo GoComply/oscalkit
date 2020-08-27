@@ -1,5 +1,5 @@
 GO=GO111MODULE=on go
-.PHONY: test gocomply_metaschema clean build vendor
+.PHONY: test gocomply_metaschema clean build pkger vendor
 
 build:
 	go build ./...
@@ -24,6 +24,14 @@ OSCAL:
 clean:
 	rm -rf ./OSCAL
 	rm -rf ./gocomply_oscalkit
+
+pkger:
+ifeq ("$(wildcard $(GOPATH)/bin/pkger)","")
+	go get -u -v github.com/markbates/pkger/cmd/pkger
+endif
+
+pkg/bundled/pkged.go: pkger OSCAL
+	pkger -o pkg/bundled
 
 vendor:
 	$(GO) mod tidy
