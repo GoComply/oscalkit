@@ -20,6 +20,7 @@ const (
 	ComponentDocument
 	POAMDocument
 	AssessmentPlanDocument
+	AssessmentResultsDocument
 )
 
 func (t DocumentType) String() string {
@@ -36,6 +37,8 @@ func (t DocumentType) String() string {
 		return "Plan of Action and Milestones"
 	case AssessmentPlanDocument:
 		return "Assessment Plan"
+	case AssessmentResultsDocument:
+		return "Assessment Result"
 	default:
 		return "Unrecognized Document Type"
 	}

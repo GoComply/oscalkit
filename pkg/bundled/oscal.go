@@ -12,20 +12,22 @@ import (
 
 var schemaPaths = map[constants.DocumentFormat]map[constants.DocumentType]string{
 	constants.XmlFormat: {
-		constants.CatalogDocument:        "/OSCAL/xml/schema/oscal_catalog_schema.xsd",
-		constants.ProfileDocument:        "/OSCAL/xml/schema/oscal_profile_schema.xsd",
-		constants.SSPDocument:            "/OSCAL/xml/schema/oscal_ssp_schema.xsd",
-		constants.ComponentDocument:      "/OSCAL/xml/schema/oscal_component_schema.xsd",
-		constants.POAMDocument:           "/OSCAL/xml/schema/oscal_poam_schema.xsd",
-		constants.AssessmentPlanDocument: "/OSCAL/xml/schema/oscal_assessment-plan_schema.xsd",
+		constants.CatalogDocument:           "/OSCAL/xml/schema/oscal_catalog_schema.xsd",
+		constants.ProfileDocument:           "/OSCAL/xml/schema/oscal_profile_schema.xsd",
+		constants.SSPDocument:               "/OSCAL/xml/schema/oscal_ssp_schema.xsd",
+		constants.ComponentDocument:         "/OSCAL/xml/schema/oscal_component_schema.xsd",
+		constants.POAMDocument:              "/OSCAL/xml/schema/oscal_poam_schema.xsd",
+		constants.AssessmentPlanDocument:    "/OSCAL/xml/schema/oscal_assessment-plan_schema.xsd",
+		constants.AssessmentResultsDocument: "/OSCAL/xml/schema/oscal_assessment-results_schema.xsd",
 	},
 	constants.JsonFormat: {
-		constants.CatalogDocument:        "/OSCAL/json/schema/oscal_catalog_schema.json",
-		constants.ProfileDocument:        "/OSCAL/json/schema/oscal_profile_schema.json",
-		constants.SSPDocument:            "/OSCAL/json/schema/oscal_ssp_schema.json",
-		constants.ComponentDocument:      "/OSCAL/json/schema/oscal_component_schema.json",
-		constants.POAMDocument:           "/OSCAL/json/schema/oscal_poam_schema.json",
-		constants.AssessmentPlanDocument: "/OSCAL/json/schema/oscal_assessment-plan_schema.json",
+		constants.CatalogDocument:           "/OSCAL/json/schema/oscal_catalog_schema.json",
+		constants.ProfileDocument:           "/OSCAL/json/schema/oscal_profile_schema.json",
+		constants.SSPDocument:               "/OSCAL/json/schema/oscal_ssp_schema.json",
+		constants.ComponentDocument:         "/OSCAL/json/schema/oscal_component_schema.json",
+		constants.POAMDocument:              "/OSCAL/json/schema/oscal_poam_schema.json",
+		constants.AssessmentPlanDocument:    "/OSCAL/json/schema/oscal_assessment-plan_schema.json",
+		constants.AssessmentResultsDocument: "/OSCAL/json/schema/oscal_assessment-results_schema.json",
 	},
 }
 

@@ -10,6 +10,7 @@ import (
 
 	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	sap "github.com/gocomply/oscalkit/types/oscal/assessment_plan"
+	sar "github.com/gocomply/oscalkit/types/oscal/assessment_results"
 	"github.com/gocomply/oscalkit/types/oscal/catalog"
 	"github.com/gocomply/oscalkit/types/oscal/component_definition"
 	poam "github.com/gocomply/oscalkit/types/oscal/plan_of_action_and_milestones"
@@ -25,6 +26,7 @@ const (
 	componentElement   = "component-definition"
 	poamRootElement    = "plan-of-action-and-milestones"
 	sapRootElement     = "assessment-plan"
+	sarRootElement     = "assessment-results"
 )
 
 // OSCAL contains specific OSCAL components
@@ -36,6 +38,7 @@ type OSCAL struct {
 	*ssp.SystemSecurityPlan         `xml:"system-security-plan"`
 	*poam.PlanOfActionAndMilestones `xml:"plan-of-action-and-milestones"`
 	*sap.AssessmentPlan             `xml:"assessment-plan"`
+	*sar.AssessmentResults          `xml:"assessment-results"`
 	Component                       *component_definition.ComponentDefinition
 	documentType                    constants.DocumentType
 }
@@ -53,6 +56,8 @@ func (o *OSCAL) DocumentType() constants.DocumentType {
 		return constants.POAMDocument
 	} else if o.AssessmentPlan != nil {
 		return constants.AssessmentPlanDocument
+	} else if o.AssessmentResults != nil {
+		return constants.AssessmentResultsDocument
 	} else {
 		return constants.UnknownDocument
 	}
@@ -133,6 +138,12 @@ func New(r io.Reader) (*OSCAL, error) {
 					return nil, err
 				}
 				return &OSCAL{AssessmentPlan: &sap}, nil
+			case sarRootElement:
+				var sar sar.AssessmentResults
+				if err := d.DecodeElement(&sar, &startElement); err != nil {
+					return nil, err
+				}
+				return &OSCAL{AssessmentResults: &sar}, nil
 			}
 		}
 	}
