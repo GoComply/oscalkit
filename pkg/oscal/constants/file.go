@@ -19,6 +19,7 @@ const (
 	SSPDocument
 	ComponentDocument
 	POAMDocument
+	AssessmentPlanDocument
 )
 
 func (t DocumentType) String() string {
@@ -33,6 +34,8 @@ func (t DocumentType) String() string {
 		return "Component"
 	case POAMDocument:
 		return "Plan of Action and Milestones"
+	case AssessmentPlanDocument:
+		return "Assessment Plan"
 	default:
 		return "Unrecognized Document Type"
 	}

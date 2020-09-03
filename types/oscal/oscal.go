@@ -9,6 +9,7 @@ import (
 	"io/ioutil"
 
 	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	sap "github.com/gocomply/oscalkit/types/oscal/assessment_plan"
 	"github.com/gocomply/oscalkit/types/oscal/catalog"
 	"github.com/gocomply/oscalkit/types/oscal/component_definition"
 	poam "github.com/gocomply/oscalkit/types/oscal/plan_of_action_and_milestones"
@@ -23,6 +24,7 @@ const (
 	sspRootElement     = "system-security-plan"
 	componentElement   = "component-definition"
 	poamRootElement    = "plan-of-action-and-milestones"
+	sapRootElement     = "assessment-plan"
 )
 
 // OSCAL contains specific OSCAL components
@@ -32,7 +34,8 @@ type OSCAL struct {
 	// Declarations *Declarations `json:"declarations,omitempty" yaml:"declarations,omitempty"`
 	Profile                         *profile.Profile `json:"profile,omitempty" yaml:"profile,omitempty"`
 	*ssp.SystemSecurityPlan         `xml:"system-security-plan"`
-	*poam.PlanOfActionAndMilestones `xml:"plan-of-action-and-milestones`
+	*poam.PlanOfActionAndMilestones `xml:"plan-of-action-and-milestones"`
+	*sap.AssessmentPlan             `xml:"assessment-plan"`
 	Component                       *component_definition.ComponentDefinition
 	documentType                    constants.DocumentType
 }
@@ -48,6 +51,8 @@ func (o *OSCAL) DocumentType() constants.DocumentType {
 		return constants.ComponentDocument
 	} else if o.PlanOfActionAndMilestones != nil {
 		return constants.POAMDocument
+	} else if o.AssessmentPlan != nil {
+		return constants.AssessmentPlanDocument
 	} else {
 		return constants.UnknownDocument
 	}
@@ -122,6 +127,12 @@ func New(r io.Reader) (*OSCAL, error) {
 					return nil, err
 				}
 				return &OSCAL{PlanOfActionAndMilestones: &poam}, nil
+			case sapRootElement:
+				var sap sap.AssessmentPlan
+				if err := d.DecodeElement(&sap, &startElement); err != nil {
+					return nil, err
+				}
+				return &OSCAL{AssessmentPlan: &sap}, nil
 			}
 		}
 	}
