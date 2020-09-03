@@ -36,7 +36,7 @@ jobs:
           COMMIT_AUTHOR_NAME: Github Actions Automations
           PULL_REQUEST_TITLE: 'Rebuilding oscalkit models to match latest development at upstream OSCAL'
           PULL_REQUEST_BODY: |
-            Automated rebuild of oscalkit models to match latest changes at https://github.com/usnistgov/OSCAL'
+            Automated rebuild of oscalkit models to match latest changes at https://github.com/usnistgov/OSCAL
           PULL_REQUEST_BRANCH: make-generate
           BRANCH_SUFFIX: short-commit-hash
       - name: Check output environment variable
