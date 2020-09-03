@@ -19,3 +19,18 @@ const (
 	SSPDocument
 	ComponentDocument
 )
+
+func (t DocumentType) String() string {
+	switch t {
+	case CatalogDocument:
+		return "Catalog"
+	case ProfileDocument:
+		return "Profile"
+	case SSPDocument:
+		return "System Security Plan"
+	case ComponentDocument:
+		return "Component"
+	default:
+		return "Unrecognized Document Type"
+	}
+}

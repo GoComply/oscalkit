@@ -37,7 +37,7 @@ type BundledFile struct {
 
 func Schema(fileFormat constants.DocumentFormat, oscalComponent constants.DocumentType) (*BundledFile, error) {
 	if oscalComponent == constants.UnknownDocument {
-		return nil, fmt.Errorf("Unknown document format %d", oscalComponent)
+		return nil, fmt.Errorf("Unknown document format: %s", oscalComponent.String())
 	}
 
 	schemas, ok := schemaPaths[fileFormat]
