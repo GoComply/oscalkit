@@ -1,6 +1,6 @@
 # github.com/gobuffalo/here v0.6.0
 github.com/gobuffalo/here
-# github.com/konsorten/go-windows-terminal-sequences v1.0.1
+# github.com/konsorten/go-windows-terminal-sequences v1.0.3
 github.com/konsorten/go-windows-terminal-sequences
 # github.com/markbates/pkger v0.17.0
 github.com/markbates/pkger
@@ -20,7 +20,7 @@ github.com/santhosh-tekuri/jsonschema/loader
 github.com/santhosh-tekuri/jsonschema/mediatypes
 # github.com/satori/go.uuid v1.2.0
 github.com/satori/go.uuid
-# github.com/sirupsen/logrus v1.3.0
+# github.com/sirupsen/logrus v1.6.0
 github.com/sirupsen/logrus
 # github.com/urfave/cli v0.0.0-20181029213200-b67dcf995b6a
 github.com/urfave/cli
@@ -28,11 +28,9 @@ github.com/urfave/cli
 golang.org/x/crypto/ed25519
 golang.org/x/crypto/ed25519/internal/edwards25519
 golang.org/x/crypto/pbkdf2
-golang.org/x/crypto/ssh/terminal
 # golang.org/x/sys v0.0.0-20200519105757-fe76b779f299
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
-golang.org/x/sys/windows
 # gopkg.in/square/go-jose.v2 v2.2.2
 gopkg.in/square/go-jose.v2
 gopkg.in/square/go-jose.v2/cipher
