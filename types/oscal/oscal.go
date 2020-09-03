@@ -11,6 +11,7 @@ import (
 	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	"github.com/gocomply/oscalkit/types/oscal/catalog"
 	"github.com/gocomply/oscalkit/types/oscal/component_definition"
+	poam "github.com/gocomply/oscalkit/types/oscal/plan_of_action_and_milestones"
 	"github.com/gocomply/oscalkit/types/oscal/profile"
 	ssp "github.com/gocomply/oscalkit/types/oscal/system_security_plan"
 	yaml "gopkg.in/yaml.v2"
@@ -21,6 +22,7 @@ const (
 	profileRootElement = "profile"
 	sspRootElement     = "system-security-plan"
 	componentElement   = "component-definition"
+	poamRootElement    = "plan-of-action-and-milestones"
 )
 
 // OSCAL contains specific OSCAL components
@@ -28,10 +30,11 @@ type OSCAL struct {
 	XMLName xml.Name         `json:"-" yaml:"-"`
 	Catalog *catalog.Catalog `json:"catalog,omitempty" yaml:"catalog,omitempty"`
 	// Declarations *Declarations `json:"declarations,omitempty" yaml:"declarations,omitempty"`
-	Profile                 *profile.Profile `json:"profile,omitempty" yaml:"profile,omitempty"`
-	*ssp.SystemSecurityPlan `xml:"system-security-plan"`
-	Component               *component_definition.ComponentDefinition
-	documentType            constants.DocumentType
+	Profile                         *profile.Profile `json:"profile,omitempty" yaml:"profile,omitempty"`
+	*ssp.SystemSecurityPlan         `xml:"system-security-plan"`
+	*poam.PlanOfActionAndMilestones `xml:"plan-of-action-and-milestones`
+	Component                       *component_definition.ComponentDefinition
+	documentType                    constants.DocumentType
 }
 
 func (o *OSCAL) DocumentType() constants.DocumentType {
@@ -43,6 +46,8 @@ func (o *OSCAL) DocumentType() constants.DocumentType {
 		return constants.SSPDocument
 	} else if o.Component != nil {
 		return constants.ComponentDocument
+	} else if o.PlanOfActionAndMilestones != nil {
+		return constants.POAMDocument
 	} else {
 		return constants.UnknownDocument
 	}
@@ -111,6 +116,12 @@ func New(r io.Reader) (*OSCAL, error) {
 					return nil, err
 				}
 				return &OSCAL{Component: &component}, nil
+			case poamRootElement:
+				var poam poam.PlanOfActionAndMilestones
+				if err := d.DecodeElement(&poam, &startElement); err != nil {
+					return nil, err
+				}
+				return &OSCAL{PlanOfActionAndMilestones: &poam}, nil
 			}
 		}
 	}

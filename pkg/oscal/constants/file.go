@@ -18,6 +18,7 @@ const (
 	ProfileDocument
 	SSPDocument
 	ComponentDocument
+	POAMDocument
 )
 
 func (t DocumentType) String() string {
@@ -30,6 +31,8 @@ func (t DocumentType) String() string {
 		return "System Security Plan"
 	case ComponentDocument:
 		return "Component"
+	case POAMDocument:
+		return "Plan of Action and Milestones"
 	default:
 		return "Unrecognized Document Type"
 	}
