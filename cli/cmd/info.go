@@ -6,6 +6,7 @@ import (
 	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	"github.com/gocomply/oscalkit/pkg/oscal_source"
 	"github.com/gocomply/oscalkit/types/oscal/catalog"
+	"github.com/gocomply/oscalkit/types/oscal/profile"
 	"github.com/urfave/cli"
 )
 
@@ -37,7 +38,7 @@ var Info = cli.Command{
 				fmt.Println("OSCAL Profile (represents tailoring of controls from OSCAL catalog(s) or profile(s))")
 				fmt.Println("ID:\t", o.Profile.Uuid)
 				printMetadata(o.Profile.Metadata)
-				return nil
+				return printImports(o.Profile)
 			case constants.CatalogDocument:
 				fmt.Println("OSCAL Catalog (represents library of control assessment objectives and activities)")
 				fmt.Println("ID:\t", o.Catalog.Uuid)
@@ -68,4 +69,34 @@ func printMetadata(m *catalog.Metadata) {
 	if m.OscalVersion != "" {
 		fmt.Println("\tOSCAL Version:\t\t", m.OscalVersion)
 	}
+}
+
+func printImports(p *profile.Profile) error {
+	fmt.Println("This profile builds on top of (Imports):")
+	for i, imp := range p.Imports {
+		fmt.Printf("  (%d)", i+1)
+		if imp.IsDocumentFragment() {
+			resource, err := p.GetDocumentFragment(imp.Href)
+			if err != nil {
+				return err
+			}
+			if resource == nil {
+				return fmt.Errorf("Could not resolve profile import %s", imp.Href)
+			}
+
+			if resource.Title != "" {
+				fmt.Println("\tTitle:\t\t\t", resource.Title)
+			}
+			if resource.Desc != "" {
+				fmt.Println("\tDesc:\t\t\t", resource.Desc)
+			}
+			for _, rlink := range resource.Rlinks {
+				fmt.Println("\tLink:\t\t\t", rlink.Href)
+			}
+
+		} else {
+			fmt.Printf("\thref=%s\n", imp.Href)
+		}
+	}
+	return nil
 }
