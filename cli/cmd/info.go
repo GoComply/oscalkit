@@ -27,7 +27,7 @@ var Info = cli.Command{
 			switch o.DocumentType() {
 			case constants.SSPDocument:
 				fmt.Println("OSCAL System Security Plan")
-				fmt.Println("ID:\t", o.SystemSecurityPlan.Uuid)
+				fmt.Println("UUID:\t", o.SystemSecurityPlan.Uuid)
 				printMetadata(o.SystemSecurityPlan.Metadata)
 				return nil
 			case constants.ComponentDocument:
@@ -36,12 +36,12 @@ var Info = cli.Command{
 				return nil
 			case constants.ProfileDocument:
 				fmt.Println("OSCAL Profile (represents tailoring of controls from OSCAL catalog(s) or profile(s))")
-				fmt.Println("ID:\t", o.Profile.Uuid)
+				fmt.Println("UUID:\t", o.Profile.Uuid)
 				printMetadata(o.Profile.Metadata)
 				return printImports(o.Profile)
 			case constants.CatalogDocument:
 				fmt.Println("OSCAL Catalog (represents library of control assessment objectives and activities)")
-				fmt.Println("ID:\t", o.Catalog.Uuid)
+				fmt.Println("UUID:\t", o.Catalog.Uuid)
 				printMetadata(o.Catalog.Metadata)
 				return nil
 			}
