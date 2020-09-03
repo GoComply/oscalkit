@@ -49,6 +49,11 @@ var Info = cli.Command{
 				fmt.Println("UUID:\t", o.PlanOfActionAndMilestones.Uuid)
 				printMetadata(o.PlanOfActionAndMilestones.Metadata)
 				return nil
+			case constants.AssessmentPlanDocument:
+				fmt.Printf("OSCAL %s (represents the planning of a periodic or continuous assessment)\n", o.DocumentType().String())
+				fmt.Println("UUID:\t", o.AssessmentPlan.Uuid)
+				printMetadata(o.AssessmentPlan.Metadata)
+				return nil
 			}
 			return cli.NewExitError("Unrecognized OSCAL resource", 1)
 		}
