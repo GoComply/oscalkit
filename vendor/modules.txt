@@ -2,8 +2,9 @@
 github.com/gobuffalo/here
 # github.com/konsorten/go-windows-terminal-sequences v1.0.1
 github.com/konsorten/go-windows-terminal-sequences
-# github.com/markbates/pkger v0.14.0
+# github.com/markbates/pkger v0.17.0
 github.com/markbates/pkger
+github.com/markbates/pkger/here
 github.com/markbates/pkger/internal/maps
 github.com/markbates/pkger/internal/takeon/github.com/markbates/hepa
 github.com/markbates/pkger/internal/takeon/github.com/markbates/hepa/filters
