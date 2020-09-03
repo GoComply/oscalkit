@@ -34,7 +34,7 @@ var Info = cli.Command{
 				printMetadata(o.Component.Metadata)
 				return nil
 			case constants.ProfileDocument:
-				fmt.Println("OSCAL Profile (represents subset of controls from OSCAL catalog(s))")
+				fmt.Println("OSCAL Profile (represents tailoring of controls from OSCAL catalog(s) or profile(s))")
 				fmt.Println("ID:\t", o.Profile.Uuid)
 				printMetadata(o.Profile.Metadata)
 				return nil
