@@ -44,6 +44,11 @@ var Info = cli.Command{
 				fmt.Println("UUID:\t", o.Catalog.Uuid)
 				printMetadata(o.Catalog.Metadata)
 				return nil
+			case constants.POAMDocument:
+				fmt.Printf("OSCAL %s (represents the known risks for a specific system, as well as the identified deviations, remediation plan, and disposition status of each risk)\n", o.DocumentType().String())
+				fmt.Println("UUID:\t", o.PlanOfActionAndMilestones.Uuid)
+				printMetadata(o.PlanOfActionAndMilestones.Metadata)
+				return nil
 			}
 			return cli.NewExitError("Unrecognized OSCAL resource", 1)
 		}
