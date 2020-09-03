@@ -36,13 +36,17 @@ type BundledFile struct {
 }
 
 func Schema(fileFormat constants.DocumentFormat, oscalComponent constants.DocumentType) (*BundledFile, error) {
+	if oscalComponent == constants.UnknownDocument {
+		return nil, fmt.Errorf("Unknown document format %d", oscalComponent)
+	}
+
 	schemas, ok := schemaPaths[fileFormat]
 	if !ok {
-		fmt.Errorf("Cannot find schema for FileFormat %d", fileFormat)
+		return nil, fmt.Errorf("Cannot find schema for FileFormat %d", fileFormat)
 	}
 	schemaPath, ok := schemas[oscalComponent]
 	if !ok {
-		fmt.Errorf("Cannot find schema for document type %d", fileFormat)
+		return nil, fmt.Errorf("Cannot find schema for document type %d", fileFormat)
 	}
 
 	return localBundledFile(pkger.Open(schemaPath))
