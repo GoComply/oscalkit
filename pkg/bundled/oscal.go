@@ -48,7 +48,7 @@ func Schema(fileFormat constants.DocumentFormat, oscalComponent constants.Docume
 	}
 	schemaPath, ok := schemas[oscalComponent]
 	if !ok {
-		return nil, fmt.Errorf("Cannot find schema for document type %d", fileFormat)
+		return nil, fmt.Errorf("Cannot find schema for document type '%s'", oscalComponent.String())
 	}
 
 	return localBundledFile(pkger.Open(schemaPath))
