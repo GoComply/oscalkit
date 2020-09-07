@@ -165,6 +165,12 @@ func New(r io.Reader) (*OSCAL, error) {
 					return nil, err
 				}
 				return &OSCAL{Profile: &profile}, nil
+			case componentElement:
+				var component component_definition.ComponentDefinition
+				if err := json.Unmarshal(v, &component); err != nil {
+					return nil, err
+				}
+				return &OSCAL{Component: &component}, nil
 			}
 		}
 	}
