@@ -171,6 +171,30 @@ func New(r io.Reader) (*OSCAL, error) {
 					return nil, err
 				}
 				return &OSCAL{Component: &component}, nil
+			case sspRootElement:
+				var ssp ssp.SystemSecurityPlan
+				if err := json.Unmarshal(v, &ssp); err != nil {
+					return nil, err
+				}
+				return &OSCAL{SystemSecurityPlan: &ssp}, nil
+			case poamRootElement:
+				var poam poam.PlanOfActionAndMilestones
+				if err := json.Unmarshal(v, &poam); err != nil {
+					return nil, err
+				}
+				return &OSCAL{PlanOfActionAndMilestones: &poam}, nil
+			case sapRootElement:
+				var sap sap.AssessmentPlan
+				if err := json.Unmarshal(v, &sap); err != nil {
+					return nil, err
+				}
+				return &OSCAL{AssessmentPlan: &sap}, nil
+			case sarRootElement:
+				var sar sar.AssessmentResults
+				if err := json.Unmarshal(v, &sar); err != nil {
+					return nil, err
+				}
+				return &OSCAL{AssessmentResults: &sar}, nil
 			}
 		}
 	}
