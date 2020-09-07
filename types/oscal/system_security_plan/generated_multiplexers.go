@@ -3,13 +3,125 @@
 // as json and xml files differ materially in their structure.
 package system_security_plan
 
-type ComponentMultiplexer = []Component
-type ResponsibleRoleMultiplexer = []ResponsibleRole
-type InventoryItemMultiplexer = []InventoryItem
-type ByComponentMultiplexer = []ByComponent
-type SetParameterMultiplexer = []SetParameter
-type ResponsiblePartyMultiplexer = []ResponsibleParty
-type DiagramMultiplexer = []Diagram
-type UserMultiplexer = []User
-type StatementMultiplexer = []Statement
-type ImplementedComponentMultiplexer = []ImplementedComponent
+import (
+	"encoding/json"
+)
+
+type ByComponentMultiplexer []ByComponent
+
+func (mplex *ByComponentMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]ByComponent
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]ByComponent, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.ComponentUuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type ComponentMultiplexer []Component
+
+func (mplex *ComponentMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]Component
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]Component, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.Uuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type DiagramMultiplexer []Diagram
+
+func (mplex *DiagramMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]Diagram
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]Diagram, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.Uuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type ImplementedComponentMultiplexer []ImplementedComponent
+
+func (mplex *ImplementedComponentMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]ImplementedComponent
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]ImplementedComponent, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.ComponentUuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type InventoryItemMultiplexer []InventoryItem
+
+func (mplex *InventoryItemMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]InventoryItem
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]InventoryItem, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.Uuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type StatementMultiplexer []Statement
+
+func (mplex *StatementMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]Statement
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]Statement, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.StatementId = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type UserMultiplexer []User
+
+func (mplex *UserMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]User
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]User, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.Uuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}

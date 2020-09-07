@@ -50,12 +50,18 @@ type LocalDefinitions struct {
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// Used to add any components, not defined via the System Security Plan (AR->AP->SSP)
-	Components []Component `xml:"component,omitempty" json:"components,omitempty"`
+	Components ComponentMultiplexer `xml:"component,omitempty" json:"components,omitempty"`
 	// Used to add any inventory-items, not defined via the System Security Plan (AR->AP->SSP)
-	InventoryItems []InventoryItem `xml:"inventory-item,omitempty" json:"inventory-items,omitempty"`
+	InventoryItems InventoryItemMultiplexer `xml:"inventory-item,omitempty" json:"inventory-items,omitempty"`
 	// Used to add any users, not defined via the System Security Plan (AR->AP->SSP)
-	Users []User `xml:"user,omitempty" json:"users,omitempty"`
+	Users UserMultiplexer `xml:"user,omitempty" json:"users,omitempty"`
 }
+
+type ComponentMultiplexer = system_security_plan.ComponentMultiplexer
+
+type InventoryItemMultiplexer = system_security_plan.InventoryItemMultiplexer
+
+type UserMultiplexer = system_security_plan.UserMultiplexer
 
 type AssessmentActivities = assessment_common.AssessmentActivities
 

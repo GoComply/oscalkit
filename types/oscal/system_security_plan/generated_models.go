@@ -75,7 +75,7 @@ type SystemCharacteristics struct {
 	// A description of the logical flow of information within the system and across its boundaries, optionally supplemented by diagrams that illustrate these flows.
 	DataFlow *DataFlow `xml:"data-flow,omitempty" json:"dataFlow,omitempty"`
 	// A reference to a set of organizations or persons that have responsibility for performing a referenced role relative to the parent context.
-	ResponsibleParties []ResponsibleParty `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
+	ResponsibleParties ResponsiblePartyMultiplexer `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
 }
 
 // Contains details about all information types that are stored, processed, or transmitted by the system, such as privacy information, and those defined in .
@@ -209,7 +209,7 @@ type AuthorizationBoundary struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A visual depiction of the system's authorization boundary.
-	Diagrams []Diagram `xml:"diagram,omitempty" json:"diagrams,omitempty"`
+	Diagrams DiagramMultiplexer `xml:"diagram,omitempty" json:"diagrams,omitempty"`
 }
 
 // A graphic that provides a visual representation the system, or some aspect of it.
@@ -244,7 +244,7 @@ type NetworkArchitecture struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A graphic that provides a visual representation the system, or some aspect of it.
-	Diagrams []Diagram `xml:"diagram,omitempty" json:"diagrams,omitempty"`
+	Diagrams DiagramMultiplexer `xml:"diagram,omitempty" json:"diagrams,omitempty"`
 }
 
 // A description of the logical flow of information within the system and across its boundaries, optionally supplemented by diagrams that illustrate these flows.
@@ -261,7 +261,7 @@ type DataFlow struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A graphic that provides a visual representation the system, or some aspect of it.
-	Diagrams []Diagram `xml:"diagram,omitempty" json:"diagrams,omitempty"`
+	Diagrams DiagramMultiplexer `xml:"diagram,omitempty" json:"diagrams,omitempty"`
 }
 
 // Provides information as to how the system is implemented.
@@ -278,9 +278,9 @@ type SystemImplementation struct {
 	// A description of another authorized system from which this system inherits capabilities that satisfy security requirements. Another term for this concept is a .
 	LeveragedAuthorizations []LeveragedAuthorization `xml:"leveraged-authorization,omitempty" json:"leveraged-authorizations,omitempty"`
 	// A type of user that interacts with the system based on an associated role.
-	Users []User `xml:"user,omitempty" json:"users,omitempty"`
+	Users UserMultiplexer `xml:"user,omitempty" json:"users,omitempty"`
 	// A defined component that can be part of an implemented system.
-	Components []Component `xml:"component,omitempty" json:"components,omitempty"`
+	Components ComponentMultiplexer `xml:"component,omitempty" json:"components,omitempty"`
 	// A set of  entries that represent the managed inventory instances of the system.
 	SystemInventory *SystemInventory `xml:"system-inventory,omitempty" json:"systemInventory,omitempty"`
 }
@@ -347,7 +347,7 @@ type Component struct {
 	// Describes the operational status of the system.
 	Status *Status `xml:"status,omitempty" json:"status,omitempty"`
 	// Defines a role that has responsibility for the component.
-	ResponsibleRoles []ResponsibleRole `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 	// Used for  components to define the protocols supported by the service.
 	Protocols []Protocol `xml:"protocol,omitempty" json:"protocols,omitempty"`
 }
@@ -372,7 +372,7 @@ type SystemInventory struct {
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// A single managed inventory item within the system.
-	InventoryItems []InventoryItem `xml:"inventory-item,omitempty" json:"inventory-items,omitempty"`
+	InventoryItems InventoryItemMultiplexer `xml:"inventory-item,omitempty" json:"inventory-items,omitempty"`
 }
 
 // A single managed inventory item within the system.
@@ -394,9 +394,9 @@ type InventoryItem struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A reference to a set of organizations or persons that have responsibility for performing a referenced role relative to the parent context.
-	ResponsibleParties []ResponsibleParty `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
+	ResponsibleParties ResponsiblePartyMultiplexer `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
 	// The set of componenets that are implemented in a given system inventory item.
-	ImplementedComponents []ImplementedComponent `xml:"implemented-component,omitempty" json:"implemented-components,omitempty"`
+	ImplementedComponents ImplementedComponentMultiplexer `xml:"implemented-component,omitempty" json:"implemented-components,omitempty"`
 }
 
 // The set of componenets that are implemented in a given system inventory item.
@@ -416,7 +416,7 @@ type ImplementedComponent struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A reference to a set of organizations or persons that have responsibility for performing a referenced role relative to the parent context.
-	ResponsibleParties []ResponsibleParty `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
+	ResponsibleParties ResponsiblePartyMultiplexer `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
 }
 
 // Describes how the system satisfies a set of controls.
@@ -447,13 +447,13 @@ type ImplementedRequirement struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// Defines how the referenced component implements a set of controls.
-	ByComponents []ByComponent `xml:"by-component,omitempty" json:"by-components,omitempty"`
+	ByComponents ByComponentMultiplexer `xml:"by-component,omitempty" json:"by-components,omitempty"`
 	// A reference to one or more roles with responsibility for performing a function relative to the control.
-	ResponsibleRoles []ResponsibleRole `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 	// Identifies the parameter that will be filled in by the enclosed value element.
-	ParameterSettings []SetParameter `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
+	ParameterSettings SetParameterMultiplexer `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
 	// Identifies which statements within a control are addressed.
-	Statements []Statement `xml:"statement,omitempty" json:"statements,omitempty"`
+	Statements StatementMultiplexer `xml:"statement,omitempty" json:"statements,omitempty"`
 }
 
 // Identifies which statements within a control are addressed.
@@ -475,9 +475,9 @@ type Statement struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A reference to one or more roles with responsibility for performing a function relative to the control.
-	ResponsibleRoles []ResponsibleRole `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 	// Defines how the referenced component implements a set of controls.
-	ByComponents []ByComponent `xml:"by-component,omitempty" json:"by-components,omitempty"`
+	ByComponents ByComponentMultiplexer `xml:"by-component,omitempty" json:"by-components,omitempty"`
 }
 
 // Defines how the referenced component implements a set of controls.
@@ -499,9 +499,9 @@ type ByComponent struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A reference to one or more roles with responsibility for performing a function relative to the control.
-	ResponsibleRoles []ResponsibleRole `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 	// Identifies the parameter that will be filled in by the enclosed value element.
-	ParameterSettings []SetParameter `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
+	ParameterSettings SetParameterMultiplexer `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
 }
 
 // A unique identifier for the system described by this system security plan.
@@ -586,6 +586,12 @@ type PortRange struct {
 // Describes the purpose for the service within the system.
 
 type Purpose string
+
+type ResponsiblePartyMultiplexer = validation_root.ResponsiblePartyMultiplexer
+
+type ResponsibleRoleMultiplexer = validation_common_root.ResponsibleRoleMultiplexer
+
+type SetParameterMultiplexer = validation_common_root.SetParameterMultiplexer
 
 type Annotation = validation_root.Annotation
 

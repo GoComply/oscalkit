@@ -20,13 +20,13 @@ type VALIDATIONCommonRoot struct {
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// TBD
-	IncorporatesComponents []IncorporatesComponent `xml:"incorporates-component,omitempty" json:"incorporates-components,omitempty"`
+	IncorporatesComponents IncorporatesComponentMultiplexer `xml:"incorporates-component,omitempty" json:"incorporates-components,omitempty"`
 	// Describes which specific statements are addressed by a requirement, by pointing to a specific requirement statement within a control.
-	OnlyStatements []OnlyStatement `xml:"only-statement,omitempty" json:"only-statements,omitempty"`
+	OnlyStatements OnlyStatementMultiplexer `xml:"only-statement,omitempty" json:"only-statements,omitempty"`
 	// A reference to one or more roles with responsibility for performing a function relative to the control.
-	ResponsibleRoles []ResponsibleRole `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 	// Identifies the parameter that will be filled in by the enclosed value element.
-	ParameterSettings []SetParameter `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
+	ParameterSettings SetParameterMultiplexer `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
 }
 
 // Describes which specific statements are addressed by a requirement, by pointing to a specific requirement statement within a control.

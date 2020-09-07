@@ -224,7 +224,7 @@ type Assets struct {
 type Tools struct {
 
 	// A defined component that can be part of an implemented system.
-	Components []Component `xml:"component,omitempty" json:"components,omitempty"`
+	Components ComponentMultiplexer `xml:"component,omitempty" json:"components,omitempty"`
 }
 
 // Identifies the origination of network-based assessment activities, such as the IP address of the tool performing assessment scans.
@@ -824,6 +824,8 @@ type RemediationOrigin struct {
 // Describes the risk.
 
 type RiskStatement = Markup
+
+type ComponentMultiplexer = system_security_plan.ComponentMultiplexer
 
 type Annotation = validation_root.Annotation
 

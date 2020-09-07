@@ -19,7 +19,7 @@ type VALIDATIONRoot struct {
 	// A name/value pair with optional explanatory remarks.
 	Annotation *Annotation `xml:"annotation,omitempty" json:"annotation,omitempty"`
 	// A reference to a set of organizations or persons that have responsibility for performing a referenced role relative to the parent context.
-	ResponsibleParties []ResponsibleParty `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
+	ResponsibleParties ResponsiblePartyMultiplexer `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
 }
 
 // Provides information about the publication and availability of the containing document.
@@ -52,7 +52,7 @@ type Metadata struct {
 	// A responsible entity, either singular (an organization or person) or collective (multiple persons)
 	Parties []Party `xml:"party,omitempty" json:"parties,omitempty"`
 	// A reference to a set of organizations or persons that have responsibility for performing a referenced role relative to the parent context.
-	ResponsibleParties []ResponsibleParty `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
+	ResponsibleParties ResponsiblePartyMultiplexer `xml:"responsible-party,omitempty" json:"responsible-parties,omitempty"`
 }
 
 // A collection of citations and resource references.

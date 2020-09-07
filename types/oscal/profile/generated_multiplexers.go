@@ -3,4 +3,23 @@
 // as json and xml files differ materially in their structure.
 package profile
 
-type SetParameterMultiplexer = []SetParameter
+import (
+	"encoding/json"
+)
+
+type SetParameterMultiplexer []SetParameter
+
+func (mplex *SetParameterMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]SetParameter
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]SetParameter, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.ParamId = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}

@@ -95,7 +95,7 @@ type Group struct {
 type Modify struct {
 
 	// A parameter setting, to be propagated to points of insertion
-	ParameterSettings []SetParameter `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
+	ParameterSettings SetParameterMultiplexer `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
 	// An Alter element specifies changes to be made to an included control when a profile is resolved.
 	Alterations []Alter `xml:"alter,omitempty" json:"alterations,omitempty"`
 }

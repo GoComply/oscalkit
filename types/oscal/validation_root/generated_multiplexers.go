@@ -3,4 +3,23 @@
 // as json and xml files differ materially in their structure.
 package validation_root
 
-type ResponsiblePartyMultiplexer = []ResponsibleParty
+import (
+	"encoding/json"
+)
+
+type ResponsiblePartyMultiplexer []ResponsibleParty
+
+func (mplex *ResponsiblePartyMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]ResponsibleParty
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]ResponsibleParty, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.RoleId = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}

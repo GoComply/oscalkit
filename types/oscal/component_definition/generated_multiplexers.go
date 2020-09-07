@@ -3,10 +3,57 @@
 // as json and xml files differ materially in their structure.
 package component_definition
 
-type IncorporatesComponentMultiplexer = []IncorporatesComponent
-type ResponsibleRoleMultiplexer = []ResponsibleRole
-type SetParameterMultiplexer = []SetParameter
-type StatementMultiplexer = []Statement
-type ComponentMultiplexer = []Component
-type CapabilityMultiplexer = []Capability
-type ResponsiblePartyMultiplexer = []ResponsibleParty
+import (
+	"encoding/json"
+)
+
+type CapabilityMultiplexer []Capability
+
+func (mplex *CapabilityMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]Capability
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]Capability, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.Uuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type ComponentMultiplexer []Component
+
+func (mplex *ComponentMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]Component
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]Component, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.Uuid = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+type StatementMultiplexer []Statement
+
+func (mplex *StatementMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]Statement
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]Statement, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.StatementId = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
