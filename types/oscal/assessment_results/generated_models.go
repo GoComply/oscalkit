@@ -28,7 +28,7 @@ type AssessmentResults struct {
 	// Identifies the assessment activities and schedule. In the assessment plan, these are planned activities. In the assessment results, these are the actual activities performed.
 	AssessmentActivities *AssessmentActivities `xml:"assessment-activities,omitempty" json:"assessmentActivities,omitempty"`
 	// Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.
-	ResultsGroup ResultsMultiplexer `xml:"results,omitempty" json:"results_group,omitempty"`
+	ResultsGroup []Results `xml:"results,omitempty" json:"results_group,omitempty"`
 	// A collection of citations and resource references.
 	BackMatter *BackMatter `xml:"back-matter,omitempty" json:"backMatter,omitempty"`
 }
