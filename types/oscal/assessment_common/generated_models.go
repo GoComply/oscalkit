@@ -62,7 +62,7 @@ type Objectives struct {
 	// Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the actual objectives, and reflects any changes from the plan.
 	ControlObjectiveGroup []ControlObjectives `xml:"control-objectives,omitempty" json:"control-objective-group,omitempty"`
 	// A local definition of a control objective. Uses catalog syntax for control objective and assessment actions.
-	Objectives []Objective `xml:"objective,omitempty" json:"objectives,omitempty"`
+	Objectives ObjectiveMultiplexer `xml:"objective,omitempty" json:"objectives,omitempty"`
 	// A local definition of a control objective. Uses catalog syntax for control objective and assessment actions.
 	MethodDefinitions []Method `xml:"method,omitempty" json:"method-definitions,omitempty"`
 }

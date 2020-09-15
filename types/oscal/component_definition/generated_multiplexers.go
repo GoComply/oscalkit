@@ -7,6 +7,26 @@ import (
 	"encoding/json"
 )
 
+type AnnotationMultiplexer []Annotation
+
+func (mplex *AnnotationMultiplexer) UnmarshalJSON(b []byte) error {
+	var l []Annotation
+	switch b[0] {
+	case '{':
+		var singleton Annotation
+		if err := json.Unmarshal(b, &singleton); err != nil {
+			return err
+		}
+		l = append(l, singleton)
+	default:
+		if err := json.Unmarshal(b, &l); err != nil {
+			return err
+		}
+	}
+	(*mplex) = l
+	return nil
+}
+
 type CapabilityMultiplexer []Capability
 
 func (mplex *CapabilityMultiplexer) UnmarshalJSON(b []byte) error {

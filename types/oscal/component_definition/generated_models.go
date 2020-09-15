@@ -135,7 +135,7 @@ type Statement struct {
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// A name/value pair with optional explanatory remarks.
-	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	Annotations AnnotationMultiplexer `xml:"annotation,omitempty" json:"annotations,omitempty"`
 	// A reference to one or more roles with responsibility for performing a function relative to the control.
 	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 }
