@@ -10,7 +10,6 @@ import (
 	"github.com/urfave/cli"
 )
 
-// Catalog generates json/xml catalogs
 var Info = cli.Command{
 	Name:      "info",
 	Usage:     "Provides information about particular OSCAL resource",
