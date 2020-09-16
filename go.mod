@@ -1,8 +1,10 @@
 module github.com/gocomply/oscalkit
 
 require (
+	github.com/davecgh/go-spew v1.1.1
 	github.com/google/go-cmp v0.5.2 // indirect
 	github.com/markbates/pkger v0.17.1
+	github.com/pmezard/go-difflib v1.0.0
 	github.com/santhosh-tekuri/jsonschema v0.0.0-20181206154329-5d49c9dfc783
 	github.com/satori/go.uuid v1.2.0
 	github.com/sirupsen/logrus v1.6.0

@@ -39,6 +39,7 @@ func Execute() error {
 	app.Commands = []cli.Command{
 		Info,
 		convert.Convert,
+		Diff,
 		Validate,
 		Sign,
 		generate.Generate,
