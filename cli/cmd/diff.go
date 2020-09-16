@@ -32,13 +32,7 @@ var Diff = cli.Command{
 		}
 		defer osB.Close()
 
-		oA := osA.OSCAL()
-		oB := osB.OSCAL()
-		if oA.DocumentType() != oB.DocumentType() {
-			return cli.NewExitError(fmt.Sprintf("Could not compare OSCAL resources, type mismatch '%s' vs '%s'",oA.DocumentType(), oB.DocumentType()), 1)
-		}
-
-		text, err := oscal_diff.Diff(oA, oB)
+		text, err := oscal_diff.Diff(osA.OSCAL(), osB.OSCAL())
 		if err != nil {
 			return err
 		}

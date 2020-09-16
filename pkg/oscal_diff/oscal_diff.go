@@ -1,6 +1,8 @@
 package oscal_diff
 
 import (
+	"fmt"
+
 	"github.com/pmezard/go-difflib/difflib"
 	"github.com/gocomply/oscalkit/types/oscal"
 	"github.com/davecgh/go-spew/spew"
@@ -14,6 +16,10 @@ var spewConfig = spew.ConfigState{
 }
 
 func Diff(a *oscal.OSCAL, b *oscal.OSCAL) (string, error) {
+	if a.DocumentType() != b.DocumentType() {
+		return "", fmt.Errorf("Could not compare OSCAL resources, type mismatch '%s' vs '%s'", a.DocumentType(), b.DocumentType())
+	}
+
 	as := spewConfig.Sdump(a)
 	bs := spewConfig.Sdump(b)
 
