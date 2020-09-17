@@ -45,9 +45,9 @@ type SystemCharacteristics struct {
 	// A unique identifier for the system described by this system security plan.
 	SystemIds []SystemId `xml:"system-id,omitempty" json:"system-ids,omitempty"`
 	// The full name of the system.
-	SystemName SystemName `xml:"system-name,omitempty" json:"systemName,omitempty"`
+	SystemName SystemName `xml:"system-name,omitempty" json:"system-name,omitempty"`
 	// A short name for the system, such as an acronym, that is suitable for display in a data table or summary list.
-	SystemNameShort SystemNameShort `xml:"system-name-short,omitempty" json:"systemNameShort,omitempty"`
+	SystemNameShort SystemNameShort `xml:"system-name-short,omitempty" json:"system-name-short,omitempty"`
 	// A free-text description of the system.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
@@ -55,9 +55,9 @@ type SystemCharacteristics struct {
 	// A reference to a local or remote resource
 	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
 	// The date this system received its authorization.
-	DateAuthorized DateAuthorized `xml:"date-authorized,omitempty" json:"dateAuthorized,omitempty"`
+	DateAuthorized DateAuthorized `xml:"date-authorized,omitempty" json:"date-authorized,omitempty"`
 	// The overall information system sensitivity categorization, such as defined by .
-	SecuritySensitivityLevel SecuritySensitivityLevel `xml:"security-sensitivity-level,omitempty" json:"securitySensitivityLevel,omitempty"`
+	SecuritySensitivityLevel SecuritySensitivityLevel `xml:"security-sensitivity-level,omitempty" json:"security-sensitivity-level,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// A name/value pair with optional explanatory remarks.
@@ -123,7 +123,7 @@ type ConfidentialityImpact struct {
 	// The selected (Confidentiality, Integrity, or Availability) security impact level.
 	Selected Selected `xml:"selected,omitempty" json:"selected,omitempty"`
 	// If the selected security level is different from the base security level, this contains the justification for the change.
-	AdjustmentJustification *AdjustmentJustification `xml:"adjustment-justification,omitempty" json:"adjustmentJustification,omitempty"`
+	AdjustmentJustification *AdjustmentJustification `xml:"adjustment-justification,omitempty" json:"adjustment-justification,omitempty"`
 }
 
 // The expected level of impact resulting from the unauthorized modification of information.
@@ -136,7 +136,7 @@ type IntegrityImpact struct {
 	// The selected (Confidentiality, Integrity, or Availability) security impact level.
 	Selected Selected `xml:"selected,omitempty" json:"selected,omitempty"`
 	// If the selected security level is different from the base security level, this contains the justification for the change.
-	AdjustmentJustification *AdjustmentJustification `xml:"adjustment-justification,omitempty" json:"adjustmentJustification,omitempty"`
+	AdjustmentJustification *AdjustmentJustification `xml:"adjustment-justification,omitempty" json:"adjustment-justification,omitempty"`
 }
 
 // The expected level of impact resulting from the disruption of access to or use of information or the information system.
@@ -149,18 +149,18 @@ type AvailabilityImpact struct {
 	// The selected (Confidentiality, Integrity, or Availability) security impact level.
 	Selected Selected `xml:"selected,omitempty" json:"selected,omitempty"`
 	// If the selected security level is different from the base security level, this contains the justification for the change.
-	AdjustmentJustification *AdjustmentJustification `xml:"adjustment-justification,omitempty" json:"adjustmentJustification,omitempty"`
+	AdjustmentJustification *AdjustmentJustification `xml:"adjustment-justification,omitempty" json:"adjustment-justification,omitempty"`
 }
 
 // The overall level of expected impact resulting from unauthorized disclosure, modification, or loss of access to information.
 type SecurityImpactLevel struct {
 
 	// A target-level of confidentiality for the system, based on the sensitivity of information within the system.
-	SecurityObjectiveConfidentiality SecurityObjectiveConfidentiality `xml:"security-objective-confidentiality,omitempty" json:"securityObjectiveConfidentiality,omitempty"`
+	SecurityObjectiveConfidentiality SecurityObjectiveConfidentiality `xml:"security-objective-confidentiality,omitempty" json:"security-objective-confidentiality,omitempty"`
 	// A target-level of integrity for the system, based on the sensitivity of information within the system.
-	SecurityObjectiveIntegrity SecurityObjectiveIntegrity `xml:"security-objective-integrity,omitempty" json:"securityObjectiveIntegrity,omitempty"`
+	SecurityObjectiveIntegrity SecurityObjectiveIntegrity `xml:"security-objective-integrity,omitempty" json:"security-objective-integrity,omitempty"`
 	// A target-level of availability for the system, based on the sensitivity of information within the system.
-	SecurityObjectiveAvailability SecurityObjectiveAvailability `xml:"security-objective-availability,omitempty" json:"securityObjectiveAvailability,omitempty"`
+	SecurityObjectiveAvailability SecurityObjectiveAvailability `xml:"security-objective-availability,omitempty" json:"security-objective-availability,omitempty"`
 }
 
 // Describes the operational status of the system.
@@ -186,9 +186,9 @@ type LeveragedAuthorization struct {
 	// A reference to a local or remote resource
 	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
 	// A reference to the party that manages the leveraged system.
-	PartyUuid PartyUuid `xml:"party-uuid,omitempty" json:"partyUuid,omitempty"`
+	PartyUuid PartyUuid `xml:"party-uuid,omitempty" json:"party-uuid,omitempty"`
 	// The date this system received its authorization.
-	DateAuthorized DateAuthorized `xml:"date-authorized,omitempty" json:"dateAuthorized,omitempty"`
+	DateAuthorized DateAuthorized `xml:"date-authorized,omitempty" json:"date-authorized,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// A name/value pair with optional explanatory remarks.
@@ -294,7 +294,7 @@ type User struct {
 	// A title for display and navigation
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A common name, short name or acronym
-	ShortName ShortName `xml:"short-name,omitempty" json:"shortName,omitempty"`
+	ShortName ShortName `xml:"short-name,omitempty" json:"short-name,omitempty"`
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.

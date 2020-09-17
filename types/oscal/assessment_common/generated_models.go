@@ -268,7 +268,7 @@ type TestMethod struct {
 	// A reference to a local or remote resource
 	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
 	// Typically used in when copying content from the assessment plan to the assessment results. The uuid should be changed in the assessment results file, and the compare-to field should be set to the original assessment plan uuid value. This enables the plan and results to be compared later to identify what changed between the two.
-	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compareTo,omitempty"`
+	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compare-to,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// Provided as means of extending the OSCAL syntax.
@@ -292,7 +292,7 @@ type TestStep struct {
 	// References a  defined in .
 	PartyUuids []PartyUuid `xml:"party-uuid,omitempty" json:"party-uuids,omitempty"`
 	// Typically used in when copying content from the assessment plan to the assessment results. The uuid should be changed in the assessment results file, and the compare-to field should be set to the original assessment plan uuid value. This enables the plan and results to be compared later to identify what changed between the two.
-	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compareTo,omitempty"`
+	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compare-to,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 }
@@ -332,7 +332,7 @@ type Task struct {
 	// Identifies locations associated with performing this task.
 	LocationUuids []LocationUuid `xml:"location-uuid,omitempty" json:"location-uuids,omitempty"`
 	// Typically used in when copying content from the assessment plan to the assessment results. The uuid should be changed in the assessment results file, and the compare-to field should be set to the original assessment plan uuid value. This enables the plan and results to be compared later to identify what changed between the two.
-	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compareTo,omitempty"`
+	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compare-to,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// Provided as means of extending the OSCAL syntax.
@@ -358,7 +358,7 @@ type IncludeActivity struct {
 	// Identifies locations associated with performing this activity.
 	LocationUuids []LocationUuid `xml:"location-uuid,omitempty" json:"location-uuids,omitempty"`
 	// Typically used in when copying content from the assessment plan to the assessment results. The uuid should be changed in the assessment results file, and the compare-to field should be set to the original assessment plan uuid value. This enables the plan and results to be compared later to identify what changed between the two.
-	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compareTo,omitempty"`
+	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compare-to,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// Provided as means of extending the OSCAL syntax.
@@ -384,7 +384,7 @@ type ExcludeActivity struct {
 	// Identifies locations associated with this activity exclusion.
 	LocationUuids []LocationUuid `xml:"location-uuid,omitempty" json:"location-uuids,omitempty"`
 	// Typically used in when copying content from the assessment plan to the assessment results. The uuid should be changed in the assessment results file, and the compare-to field should be set to the original assessment plan uuid value. This enables the plan and results to be compared later to identify what changed between the two.
-	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compareTo,omitempty"`
+	CompareTo CompareTo `xml:"compare-to,omitempty" json:"compare-to,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// Provided as means of extending the OSCAL syntax.
@@ -432,7 +432,7 @@ type Finding struct {
 	// Date/time identifying when the finding information is out-of-date and no longer valid. Typically used with continuous assessment scenarios.
 	Expires Expires `xml:"expires,omitempty" json:"expires,omitempty"`
 	// Identifies the implementation statement in the SSP to which this finding is related.
-	ImplementationStatementUuid ImplementationStatementUuid `xml:"implementation-statement-uuid,omitempty" json:"implementationStatementUuid,omitempty"`
+	ImplementationStatementUuid ImplementationStatementUuid `xml:"implementation-statement-uuid,omitempty" json:"implementation-statement-uuid,omitempty"`
 	// A pointer, by ID, to an externally-defined threat.
 	ThreatIds []ThreatId `xml:"threat-id,omitempty" json:"threat-ids,omitempty"`
 	// The person who collected the evidence or made the observation.
@@ -464,7 +464,7 @@ type ObjectiveStatus struct {
 	// A brief indication as to whether the objective is satisfied or not.
 	Result *Result `xml:"result,omitempty" json:"result,omitempty"`
 	// Identifies the implementation status of the control or control objective.
-	ImplementationStatus *ImplementationStatus `xml:"implementation-status,omitempty" json:"implementationStatus,omitempty"`
+	ImplementationStatus *ImplementationStatus `xml:"implementation-status,omitempty" json:"implementation-status,omitempty"`
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 }
@@ -530,13 +530,13 @@ type Risk struct {
 	// An individual risk metric from a specified system.
 	RiskMetrics []RiskMetric `xml:"risk-metric,omitempty" json:"risk-metrics,omitempty"`
 	// Describes the risk.
-	RiskStatement *RiskStatement `xml:"risk-statement,omitempty" json:"riskStatement,omitempty"`
+	RiskStatement *RiskStatement `xml:"risk-statement,omitempty" json:"risk-statement,omitempty"`
 	// The date/time by which the risk must be closed.
-	RemediationDeadline RemediationDeadline `xml:"remediation-deadline,omitempty" json:"remediationDeadline,omitempty"`
+	RemediationDeadline RemediationDeadline `xml:"remediation-deadline,omitempty" json:"remediation-deadline,omitempty"`
 	// Describes the status of the associated risk.
-	RiskStatus RiskStatus `xml:"risk-status,omitempty" json:"riskStatus,omitempty"`
+	RiskStatus RiskStatus `xml:"risk-status,omitempty" json:"risk-status,omitempty"`
 	// Describes the actions taken that resulted in the closure of the identified risk.
-	ClosureActions *ClosureActions `xml:"closure-actions,omitempty" json:"closureActions,omitempty"`
+	ClosureActions *ClosureActions `xml:"closure-actions,omitempty" json:"closure-actions,omitempty"`
 	// References a  defined in .
 	PartyUuids []PartyUuid `xml:"party-uuid,omitempty" json:"party-uuids,omitempty"`
 	// Provided as means of extending the OSCAL syntax.
@@ -565,7 +565,7 @@ type TrackingEntry struct {
 	Type string `xml:"type,attr,omitempty" json:"type,omitempty"`
 
 	// Date/time stamp of the associated information.
-	DateTimeStamp DateTimeStamp `xml:"date-time-stamp,omitempty" json:"dateTimeStamp,omitempty"`
+	DateTimeStamp DateTimeStamp `xml:"date-time-stamp,omitempty" json:"date-time-stamp,omitempty"`
 	// A title for display and navigation
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A description supporting the parent item.

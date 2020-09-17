@@ -16,7 +16,7 @@ type PlanOfActionAndMilestones struct {
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
 	// A unique identifier for the system described by this system security plan.
-	SystemId *SystemId `xml:"system-id,omitempty" json:"systemId,omitempty"`
+	SystemId *SystemId `xml:"system-id,omitempty" json:"system-id,omitempty"`
 	// Provides information about the publication and availability of the containing document.
 	Metadata *Metadata `xml:"metadata,omitempty" json:"metadata,omitempty"`
 	// Used by the POA&M to import information about the system.
@@ -78,7 +78,7 @@ type PoamItem struct {
 	// Date/time identifying when the finding information is out-of-date and no longer valid. Typically used with continuous assessment scenarios.
 	Expires Expires `xml:"expires,omitempty" json:"expires,omitempty"`
 	// Identifies the implementation statement in the SSP to which this finding is related.
-	ImplementationStatementUuid ImplementationStatementUuid `xml:"implementation-statement-uuid,omitempty" json:"implementationStatementUuid,omitempty"`
+	ImplementationStatementUuid ImplementationStatementUuid `xml:"implementation-statement-uuid,omitempty" json:"implementation-statement-uuid,omitempty"`
 	// A pointer, by ID, to an externally-defined threat.
 	ThreatIds []ThreatId `xml:"threat-id,omitempty" json:"threat-ids,omitempty"`
 	// The person who collected the evidence or made the observation.

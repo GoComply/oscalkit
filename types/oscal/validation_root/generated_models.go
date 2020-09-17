@@ -11,7 +11,7 @@ type VALIDATIONRoot struct {
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// References a  defined in .
-	PartyUuid PartyUuid `xml:"party-uuid,omitempty" json:"partyUuid,omitempty"`
+	PartyUuid PartyUuid `xml:"party-uuid,omitempty" json:"party-uuid,omitempty"`
 	// Provides information about the publication and availability of the containing document.
 	Metadata *Metadata `xml:"metadata,omitempty" json:"metadata,omitempty"`
 	// A collection of citations and resource references.
@@ -30,11 +30,11 @@ type Metadata struct {
 	// The date and time this document was published.
 	Published Published `xml:"published,omitempty" json:"published,omitempty"`
 	// Date and time of last modification.
-	LastModified LastModified `xml:"last-modified,omitempty" json:"lastModified,omitempty"`
+	LastModified LastModified `xml:"last-modified,omitempty" json:"last-modified,omitempty"`
 	// The version of the document content.
 	Version Version `xml:"version,omitempty" json:"version,omitempty"`
 	// OSCAL model version.
-	OscalVersion OscalVersion `xml:"oscal-version,omitempty" json:"oscalVersion,omitempty"`
+	OscalVersion OscalVersion `xml:"oscal-version,omitempty" json:"oscal-version,omitempty"`
 	// A document identifier qualified by an identifier .
 	DocumentIds []DocId `xml:"doc-id,omitempty" json:"document-ids,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
@@ -70,11 +70,11 @@ type Revision struct {
 	// The date and time this document was published.
 	Published Published `xml:"published,omitempty" json:"published,omitempty"`
 	// Date and time of last modification.
-	LastModified LastModified `xml:"last-modified,omitempty" json:"lastModified,omitempty"`
+	LastModified LastModified `xml:"last-modified,omitempty" json:"last-modified,omitempty"`
 	// The version of the document content.
 	Version Version `xml:"version,omitempty" json:"version,omitempty"`
 	// OSCAL model version.
-	OscalVersion OscalVersion `xml:"oscal-version,omitempty" json:"oscalVersion,omitempty"`
+	OscalVersion OscalVersion `xml:"oscal-version,omitempty" json:"oscal-version,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// A reference to a local or remote resource
@@ -134,9 +134,9 @@ type Party struct {
 	Type string `xml:"type,attr,omitempty" json:"type,omitempty"`
 
 	// The full (legal) name of the party.
-	PartyName PartyName `xml:"party-name,omitempty" json:"partyName,omitempty"`
+	PartyName PartyName `xml:"party-name,omitempty" json:"party-name,omitempty"`
 	// A common name, short name or acronym
-	ShortName ShortName `xml:"short-name,omitempty" json:"shortName,omitempty"`
+	ShortName ShortName `xml:"short-name,omitempty" json:"short-name,omitempty"`
 	// An identifier for a person (such as an ORCID) using a designated scheme.
 	ExternalIds []ExternalId `xml:"external-id,omitempty" json:"external-ids,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
@@ -184,7 +184,7 @@ type Address struct {
 	// State, province or analogous geographical region for mailing address
 	State State `xml:"state,omitempty" json:"state,omitempty"`
 	// Postal or ZIP code for mailing address
-	PostalCode PostalCode `xml:"postal-code,omitempty" json:"postalCode,omitempty"`
+	PostalCode PostalCode `xml:"postal-code,omitempty" json:"postal-code,omitempty"`
 	// Country for mailing address
 	Country Country `xml:"country,omitempty" json:"country,omitempty"`
 }
@@ -237,7 +237,7 @@ type Role struct {
 	// A title for display and navigation
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A common name, short name or acronym
-	ShortName ShortName `xml:"short-name,omitempty" json:"shortName,omitempty"`
+	ShortName ShortName `xml:"short-name,omitempty" json:"short-name,omitempty"`
 	// A short textual description
 	Desc Desc `xml:"desc,omitempty" json:"desc,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.

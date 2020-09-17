@@ -51,7 +51,7 @@ type Merge struct {
 	Combine *Combine `xml:"combine,omitempty" json:"combine,omitempty"`
 	// An As-is element indicates that the controls should be structured in resolution as they are
 	//         structured in their source catalogs. It does not contain any elements or attributes.
-	AsIs AsIs `xml:"as-is,omitempty" json:"asIs,omitempty"`
+	AsIs AsIs `xml:"as-is,omitempty" json:"as-is,omitempty"`
 	// A Custom element frames a structure for embedding represented controls in resolution.
 	Custom *Custom `xml:"custom,omitempty" json:"custom,omitempty"`
 }
