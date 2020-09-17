@@ -320,7 +320,7 @@ func GenerateImplementationParameter(param catalog.Param, guidance []string) imp
 		PossibleValues: func() []string {
 			values := []string{}
 			for _, x := range param.Constraints {
-				values = append(values, x.Value)
+				values = append(values, x.Detail)
 			}
 			return values
 		}(),

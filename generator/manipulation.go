@@ -77,7 +77,7 @@ func ProcessSetParam(setParams []profile.SetParameter, c *catalog.Catalog, catal
 						if len(sp.Constraints) == 0 {
 							continue
 						}
-						c.Groups[i].Controls[j].Parts[k].ModifyProse(sp.ParamId, sp.Constraints[0].Value)
+						c.Groups[i].Controls[j].Parts[k].ModifyProse(sp.ParamId, sp.Constraints[0].Detail)
 					}
 				}
 			}
