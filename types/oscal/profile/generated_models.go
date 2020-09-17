@@ -187,6 +187,7 @@ type Add struct {
 type Combine struct {
 	// How clashing controls should be handled
 	Method string `xml:"method,attr,omitempty" json:"method,omitempty"`
+	Value  string `xml:",chardata" json:"value,omitempty"`
 }
 
 // An As-is element indicates that the controls should be structured in resolution as they are
@@ -198,6 +199,7 @@ type AsIs string
 type All struct {
 	// When a control is included, whether its child (dependent) controls are also included.
 	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"withChildControls,omitempty"`
+	Value             string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Call a control by its ID
@@ -207,6 +209,7 @@ type Call struct {
 
 	// When a control is included, whether its child (dependent) controls are also included.
 	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"withChildControls,omitempty"`
+	Value             string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Select controls by (regular expression) match on ID
@@ -219,6 +222,7 @@ type Match struct {
 
 	// When a control is included, whether its child (dependent) controls are also included.
 	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"withChildControls,omitempty"`
+	Value             string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Specifies elements to be removed from a control, in resolution
@@ -234,6 +238,7 @@ type Remove struct {
 
 	// Items to remove, by the name of the item's type, or generic identifier, e.g.  or
 	ItemName string `xml:"item-name,attr,omitempty" json:"itemName,omitempty"`
+	Value    string `xml:",chardata" json:"value,omitempty"`
 }
 
 type Annotation = validation_root.Annotation

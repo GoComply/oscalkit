@@ -580,6 +580,7 @@ type PortRange struct {
 
 	// Indicates the transport type.
 	Transport string `xml:"transport,attr,omitempty" json:"transport,omitempty"`
+	Value     string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Describes the purpose for the service within the system.
