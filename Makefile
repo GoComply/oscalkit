@@ -12,7 +12,7 @@ test:
 
 gocomply_metaschema:
 ifeq ("$(wildcard $(GOPATH)/bin/gocomply_metaschema)","")
-	go get -u -v github.com/gocomply/metaschema/cli/gocomply_metaschema
+	$(GO) get -u -v github.com/gocomply/metaschema/cli/gocomply_metaschema@master
 endif
 
 generate: OSCAL gocomply_metaschema
