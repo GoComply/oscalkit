@@ -278,7 +278,7 @@ type Link struct {
 
 	// Describes the media type of the linked resource
 	MediaType string `xml:"media-type,attr,omitempty" json:"mediaType,omitempty"`
-	Value     string `xml:",chardata" json:"value,omitempty"`
+	Text      string `xml:",chardata" json:"text,omitempty"`
 }
 
 // The date and time this document was published.
@@ -300,8 +300,8 @@ type OscalVersion string
 // A document identifier qualified by an identifier .
 type DocId struct {
 	// Qualifies the kind of document identifier.
-	Type  string `xml:"type,attr,omitempty" json:"type,omitempty"`
-	Value string `xml:",chardata" json:"value,omitempty"`
+	Type       string `xml:"type,attr,omitempty" json:"type,omitempty"`
+	Identifier string `xml:",chardata" json:"identifier,omitempty"`
 }
 
 // A value with a name, attributed to the containing control, part, or group.
@@ -331,8 +331,8 @@ type PartyUuid string
 // An identifier for a person (such as an ORCID) using a designated scheme.
 type ExternalId struct {
 	// Indicating the type of identifier, address, email or other data item.
-	Type  string `xml:"type,attr,omitempty" json:"type,omitempty"`
-	Value string `xml:",chardata" json:"value,omitempty"`
+	Type string `xml:"type,attr,omitempty" json:"type,omitempty"`
+	Id   string `xml:",chardata" json:"id,omitempty"`
 }
 
 // Identifies that the containing object is a member of the organization associated with the provided UUID.
@@ -374,8 +374,8 @@ type Email string
 // Contact number by telephone
 type Phone struct {
 	// Indicates the type of phone number.
-	Type  string `xml:"type,attr,omitempty" json:"type,omitempty"`
-	Value string `xml:",chardata" json:"value,omitempty"`
+	Type   string `xml:"type,attr,omitempty" json:"type,omitempty"`
+	Number string `xml:",chardata" json:"number,omitempty"`
 }
 
 // URL for web site or Internet presence

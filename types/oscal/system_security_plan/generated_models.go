@@ -508,7 +508,7 @@ type ByComponent struct {
 type SystemId struct {
 	// Identifies the identification system from which the provided identifier was assigned.
 	IdentifierType string `xml:"identifier-type,attr,omitempty" json:"identifierType,omitempty"`
-	Value          string `xml:",chardata" json:"value,omitempty"`
+	Id             string `xml:",chardata" json:"id,omitempty"`
 }
 
 // The full name of the system.
@@ -527,7 +527,7 @@ type SecuritySensitivityLevel string
 type InformationTypeId struct {
 	// Specifies the information type identification system used.
 	System string `xml:"system,attr,omitempty" json:"system,omitempty"`
-	Value  string `xml:",chardata" json:"value,omitempty"`
+	Id     string `xml:",chardata" json:"id,omitempty"`
 }
 
 // The prescribed base (Confidentiality, Integrity, or Availability) security impact level.

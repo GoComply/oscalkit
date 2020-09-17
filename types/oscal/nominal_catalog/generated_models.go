@@ -88,15 +88,15 @@ type Label string
 // Indicates and explains the purpose and use of a parameter
 type Usage struct {
 	// Unique identifier of the containing object
-	Id    string `xml:"id,attr,omitempty" json:"id,omitempty"`
-	Value string `xml:",chardata" json:"value,omitempty"`
+	Id      string `xml:"id,attr,omitempty" json:"id,omitempty"`
+	Summary string `xml:",chardata" json:"summary,omitempty"`
 }
 
 // A formal or informal expression of a constraint or test
 type Constraint struct {
 	// A formal (executable) expression of a constraint
-	Test  string `xml:"test,attr,omitempty" json:"test,omitempty"`
-	Value string `xml:",chardata" json:"value,omitempty"`
+	Test   string `xml:"test,attr,omitempty" json:"test,omitempty"`
+	Detail string `xml:",chardata" json:"detail,omitempty"`
 }
 
 // Indicates a permissible value for a parameter or property
