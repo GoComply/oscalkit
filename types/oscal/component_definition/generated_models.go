@@ -143,8 +143,7 @@ type Statement struct {
 // Loads a component definition from another resource.
 type ImportComponentDefinition struct {
 	// A link to a resource that defines a set of components and/or capabilities to import into this collection.
-	Href  string `xml:"href,attr,omitempty" json:"href,omitempty"`
-	Value string `xml:",chardata" json:"value,omitempty"`
+	Href string `xml:"href,attr,omitempty" json:"href,omitempty"`
 }
 
 type IncorporatesComponentMultiplexer = validation_common_root.IncorporatesComponentMultiplexer
