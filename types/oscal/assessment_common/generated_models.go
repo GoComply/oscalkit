@@ -808,7 +808,6 @@ type RiskMetric struct {
 type RiskStatus string
 
 // Describes the actions taken that resulted in the closure of the identified risk.
-
 type ClosureActions = Markup
 
 // Points to the source of the remediation recommendation or plan
@@ -822,7 +821,6 @@ type RemediationOrigin struct {
 }
 
 // Describes the risk.
-
 type RiskStatement = Markup
 
 type ComponentMultiplexer = system_security_plan.ComponentMultiplexer

@@ -412,9 +412,7 @@ type Base64 struct {
 }
 
 // A description supporting the parent item.
-
 type Description = Markup
 
 // Additional commentary on the parent item.
-
 type Remarks = Markup
