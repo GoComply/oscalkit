@@ -21,6 +21,7 @@ func Diff(a *oscal.OSCAL, b *oscal.OSCAL) (string, error) {
 		return "", fmt.Errorf("Could not compare OSCAL resources, type mismatch '%s' vs '%s'", a.DocumentType(), b.DocumentType())
 	}
 
+	hideFormatRelatedDifferences(a, b)
 	as := spewConfig.Sdump(a)
 	bs := spewConfig.Sdump(b)
 
