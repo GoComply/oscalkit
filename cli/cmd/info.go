@@ -15,7 +15,13 @@ import (
 var Info = cli.Command{
 	Name:      "info",
 	Usage:     "Provides information about particular OSCAL resource",
-	ArgsUsage: "[file]",
+	ArgsUsage: "file [file...]",
+	Before: func(c *cli.Context) error {
+		if c.NArg() == 0 {
+			return cli.NewExitError("No file provided", 1)
+		}
+		return nil
+	},
 	Action: func(c *cli.Context) error {
 		for _, filePath := range c.Args() {
 			os, err := oscal_source.Open(filePath)
@@ -24,9 +30,12 @@ var Info = cli.Command{
 			}
 			defer os.Close()
 
-			return printInfo(os.OSCAL())
+			err = printInfo(os.OSCAL())
+			if err != nil {
+				return err
+			}
 		}
-		return cli.NewExitError("No file provided", 1)
+		return nil
 	},
 }
 
