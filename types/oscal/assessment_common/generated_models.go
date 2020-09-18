@@ -111,7 +111,7 @@ type Objective struct {
 	// Unique identifier of the containing object
 	Id string `xml:"id,attr,omitempty" json:"id,omitempty"`
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
 	// A human-readable description of the defined objective.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -193,7 +193,7 @@ type ExcludeSubject struct {
 type SubjectReference struct {
 
 	// A pointer to a component, inventory-item, location, party, user, or resource using it's UUID.
-	UuidRef string `xml:"uuid-ref,attr,omitempty" json:"uuidRef,omitempty"`
+	UuidRef string `xml:"uuid-ref,attr,omitempty" json:"uuid-ref,omitempty"`
 	// Indicating the type of identifier, address, email or other data item.
 	Type string `xml:"type,attr,omitempty" json:"type,omitempty"`
 
@@ -453,9 +453,9 @@ type Finding struct {
 type ObjectiveStatus struct {
 
 	// Points to an assessment objective.
-	ObjectiveId string `xml:"objective-id,attr,omitempty" json:"objectiveId,omitempty"`
+	ObjectiveId string `xml:"objective-id,attr,omitempty" json:"objective-id,omitempty"`
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
 	// A title for display and navigation
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
@@ -604,7 +604,7 @@ type MitigatingFactor struct {
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 	// Points to an implementation statement in the SSP.
-	ImplementationUuid string `xml:"implementation-uuid,attr,omitempty" json:"implementationUuid,omitempty"`
+	ImplementationUuid string `xml:"implementation-uuid,attr,omitempty" json:"implementation-uuid,omitempty"`
 
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -665,35 +665,35 @@ type Part struct {
 // Identifies an individual control to include.
 type IncludeControl struct {
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 	Value     string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Identifies an individual control to exclude.
 type ExcludeControl struct {
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 	Value     string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Identifies an individual control objective to include.
 type IncludeObjective struct {
 	// Points to an assessment objective.
-	ObjectiveId string `xml:"objective-id,attr,omitempty" json:"objectiveId,omitempty"`
+	ObjectiveId string `xml:"objective-id,attr,omitempty" json:"objective-id,omitempty"`
 	Value       string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Identifies an individual control objective to exclude.
 type ExcludeObjective struct {
 	// Points to an assessment objective.
-	ObjectiveId string `xml:"objective-id,attr,omitempty" json:"objectiveId,omitempty"`
+	ObjectiveId string `xml:"objective-id,attr,omitempty" json:"objective-id,omitempty"`
 	Value       string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Identifies a method for assessing the satisfaction of this objective.
 type AssessmentMethod struct {
 	// Identifies the assessment method.
-	MethodUuid string `xml:"method-uuid,attr,omitempty" json:"methodUuid,omitempty"`
+	MethodUuid string `xml:"method-uuid,attr,omitempty" json:"method-uuid,omitempty"`
 	Value      string `xml:",chardata" json:"value,omitempty"`
 }
 
@@ -754,14 +754,14 @@ type ImplementationStatus struct {
 // Identifies an individual who gathered the evidence resulting in the observation or risk identification.
 type Assessor struct {
 	// The UUID of the assessor who collected the evidence or made the observation.
-	PartyUuid string `xml:"party-uuid,attr,omitempty" json:"partyUuid,omitempty"`
+	PartyUuid string `xml:"party-uuid,attr,omitempty" json:"party-uuid,omitempty"`
 	Value     string `xml:",chardata" json:"value,omitempty"`
 }
 
 // Identifies the tool or activity that resulted in the observation.
 type Origin struct {
 	// A pointer to a relevant item, using it's UUID.
-	UuidRef string `xml:"uuid-ref,attr,omitempty" json:"uuidRef,omitempty"`
+	UuidRef string `xml:"uuid-ref,attr,omitempty" json:"uuid-ref,omitempty"`
 
 	// Indicating the type of identifier, address, email or other data item.
 	Type  string `xml:"type,attr,omitempty" json:"type,omitempty"`
@@ -814,7 +814,7 @@ type ClosureActions = Markup
 // Points to the source of the remediation recommendation or plan
 type RemediationOrigin struct {
 	// A pointer to a relevant item, using it's UUID.
-	UuidRef string `xml:"uuid-ref,attr,omitempty" json:"uuidRef,omitempty"`
+	UuidRef string `xml:"uuid-ref,attr,omitempty" json:"uuid-ref,omitempty"`
 
 	// Indicating the type of identifier, address, email or other data item.
 	Type  string `xml:"type,attr,omitempty" json:"type,omitempty"`

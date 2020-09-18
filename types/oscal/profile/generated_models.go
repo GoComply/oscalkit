@@ -126,11 +126,11 @@ type Exclude struct {
 type SetParameter struct {
 
 	// Indicates the value of the 'id' flag on a target parameter; i.e. which parameter to set
-	ParamId string `xml:"param-id,attr,omitempty" json:"paramId,omitempty"`
+	ParamId string `xml:"param-id,attr,omitempty" json:"param-id,omitempty"`
 	// Indicating the type or classification of the containing object
 	Class string `xml:"class,attr,omitempty" json:"class,omitempty"`
 	// Another parameter invoking this one
-	DependsOn string `xml:"depends-on,attr,omitempty" json:"dependsOn,omitempty"`
+	DependsOn string `xml:"depends-on,attr,omitempty" json:"depends-on,omitempty"`
 
 	// A placeholder for a missing value, in display.
 	Label Label `xml:"label,omitempty" json:"label,omitempty"`
@@ -152,7 +152,7 @@ type SetParameter struct {
 type Alter struct {
 
 	// Value of the 'id' flag on a target control
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
 	// Specifies elements to be removed from a control, in resolution
 	Removals []Remove `xml:"remove,omitempty" json:"removals,omitempty"`
@@ -166,7 +166,7 @@ type Add struct {
 	// Where to add the new content with respect to the targeted element (beside it or inside it)
 	Position string `xml:"position,attr,omitempty" json:"position,omitempty"`
 	// Target location of the addition.
-	IdRef string `xml:"id-ref,attr,omitempty" json:"idRef,omitempty"`
+	IdRef string `xml:"id-ref,attr,omitempty" json:"id-ref,omitempty"`
 
 	// A title for display and navigation
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
@@ -197,16 +197,16 @@ type AsIs string
 // Include all controls from the imported resource (catalog)
 type All struct {
 	// When a control is included, whether its child (dependent) controls are also included.
-	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"withChildControls,omitempty"`
+	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"with-child-controls,omitempty"`
 }
 
 // Call a control by its ID
 type Call struct {
 	// Value of the 'id' flag on a target control
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
 	// When a control is included, whether its child (dependent) controls are also included.
-	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"withChildControls,omitempty"`
+	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"with-child-controls,omitempty"`
 }
 
 // Select controls by (regular expression) match on ID
@@ -218,22 +218,22 @@ type Match struct {
 	Order string `xml:"order,attr,omitempty" json:"order,omitempty"`
 
 	// When a control is included, whether its child (dependent) controls are also included.
-	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"withChildControls,omitempty"`
+	WithChildControls string `xml:"with-child-controls,attr,omitempty" json:"with-child-controls,omitempty"`
 }
 
 // Specifies elements to be removed from a control, in resolution
 type Remove struct {
 	// Items to remove, by assigned name
-	NameRef string `xml:"name-ref,attr,omitempty" json:"nameRef,omitempty"`
+	NameRef string `xml:"name-ref,attr,omitempty" json:"name-ref,omitempty"`
 
 	// Items to remove, by class. A token match.
-	ClassRef string `xml:"class-ref,attr,omitempty" json:"classRef,omitempty"`
+	ClassRef string `xml:"class-ref,attr,omitempty" json:"class-ref,omitempty"`
 
 	// Items to remove, indicated by their IDs
-	IdRef string `xml:"id-ref,attr,omitempty" json:"idRef,omitempty"`
+	IdRef string `xml:"id-ref,attr,omitempty" json:"id-ref,omitempty"`
 
 	// Items to remove, by the name of the item's type, or generic identifier, e.g.  or
-	ItemName string `xml:"item-name,attr,omitempty" json:"itemName,omitempty"`
+	ItemName string `xml:"item-name,attr,omitempty" json:"item-name,omitempty"`
 }
 
 type Annotation = validation_root.Annotation

@@ -165,7 +165,7 @@ type Rlink struct {
 	// A link to a document or document fragment (actual, nominal or projected)
 	Href string `xml:"href,attr,omitempty" json:"href,omitempty"`
 	// Describes the media type of the linked resource
-	MediaType string `xml:"media-type,attr,omitempty" json:"mediaType,omitempty"`
+	MediaType string `xml:"media-type,attr,omitempty" json:"media-type,omitempty"`
 
 	// A representation of a cryptographic digest generated over a resource using a hash algorithm.
 	Hashes []Hash `xml:"hash,omitempty" json:"hashes,omitempty"`
@@ -254,7 +254,7 @@ type Role struct {
 type ResponsibleParty struct {
 
 	// The role that the party is responsible for.
-	RoleId string `xml:"role-id,attr,omitempty" json:"roleId,omitempty"`
+	RoleId string `xml:"role-id,attr,omitempty" json:"role-id,omitempty"`
 
 	// References a  defined in .
 	PartyUuids []PartyUuid `xml:"party-uuid,omitempty" json:"party-uuids,omitempty"`
@@ -277,7 +277,7 @@ type Link struct {
 	Rel string `xml:"rel,attr,omitempty" json:"rel,omitempty"`
 
 	// Describes the media type of the linked resource
-	MediaType string `xml:"media-type,attr,omitempty" json:"mediaType,omitempty"`
+	MediaType string `xml:"media-type,attr,omitempty" json:"media-type,omitempty"`
 	Text      string `xml:",chardata" json:"text,omitempty"`
 }
 
@@ -407,7 +407,7 @@ type Base64 struct {
 	Filename string `xml:"filename,attr,omitempty" json:"filename,omitempty"`
 
 	// Describes the media type of the linked resource
-	MediaType string `xml:"media-type,attr,omitempty" json:"mediaType,omitempty"`
+	MediaType string `xml:"media-type,attr,omitempty" json:"media-type,omitempty"`
 	Value     string `xml:",chardata" json:"value,omitempty"`
 }
 

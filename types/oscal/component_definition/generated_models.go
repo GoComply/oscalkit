@@ -30,7 +30,7 @@ type Component struct {
 	// The component's short, human-readable name.
 	Name string `xml:"name,attr,omitempty" json:"name,omitempty"`
 	// A category describing the purpose of the component.
-	ComponentType string `xml:"component-type,attr,omitempty" json:"componentType,omitempty"`
+	ComponentType string `xml:"component-type,attr,omitempty" json:"component-type,omitempty"`
 
 	// A longer name for the component.
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
@@ -98,7 +98,7 @@ type ImplementedRequirement struct {
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -122,7 +122,7 @@ type ImplementedRequirement struct {
 type Statement struct {
 
 	// A reference to the specific implemented statement associated with a control.
-	StatementId string `xml:"statement-id,attr,omitempty" json:"statementId,omitempty"`
+	StatementId string `xml:"statement-id,attr,omitempty" json:"statement-id,omitempty"`
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 

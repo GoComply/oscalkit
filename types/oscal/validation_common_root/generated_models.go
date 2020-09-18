@@ -9,9 +9,9 @@ import (
 type VALIDATIONCommonRoot struct {
 
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 	// A category describing the purpose of the component.
-	ComponentType string `xml:"component-type,attr,omitempty" json:"componentType,omitempty"`
+	ComponentType string `xml:"component-type,attr,omitempty" json:"component-type,omitempty"`
 	// A reference to an OSCAL catalog or profile providing the referenced control or subcontrol definition.
 	Source string `xml:"source,attr,omitempty" json:"source,omitempty"`
 
@@ -33,7 +33,7 @@ type VALIDATIONCommonRoot struct {
 type OnlyStatement struct {
 
 	// A reference to the specific implemented statement.
-	StatementId string `xml:"statement-id,attr,omitempty" json:"statementId,omitempty"`
+	StatementId string `xml:"statement-id,attr,omitempty" json:"statement-id,omitempty"`
 
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -49,7 +49,7 @@ type OnlyStatement struct {
 type IncorporatesComponent struct {
 
 	// A reference to a component by its identifier
-	ComponentUuid string `xml:"component-uuid,attr,omitempty" json:"componentUuid,omitempty"`
+	ComponentUuid string `xml:"component-uuid,attr,omitempty" json:"component-uuid,omitempty"`
 
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -59,7 +59,7 @@ type IncorporatesComponent struct {
 type ResponsibleRole struct {
 
 	// The role that is responsible for the business function.
-	RoleId string `xml:"role-id,attr,omitempty" json:"roleId,omitempty"`
+	RoleId string `xml:"role-id,attr,omitempty" json:"role-id,omitempty"`
 
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
@@ -77,7 +77,7 @@ type ResponsibleRole struct {
 type SetParameter struct {
 
 	// Points to a parameter within a control, to which the contained value will be assigned.
-	ParamId string `xml:"param-id,attr,omitempty" json:"paramId,omitempty"`
+	ParamId string `xml:"param-id,attr,omitempty" json:"param-id,omitempty"`
 
 	// The phrase or string that fills-in the parameter and completes the requirement statement.
 	Value Value `xml:"value,omitempty" json:"value,omitempty"`

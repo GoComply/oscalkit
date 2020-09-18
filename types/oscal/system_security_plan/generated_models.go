@@ -328,7 +328,7 @@ type Component struct {
 	// The unique identifier for the component.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 	// A category describing the purpose of the component.
-	ComponentType string `xml:"component-type,attr,omitempty" json:"componentType,omitempty"`
+	ComponentType string `xml:"component-type,attr,omitempty" json:"component-type,omitempty"`
 
 	// A human readable name for the system component.
 	Title Title `xml:"title,omitempty" json:"title,omitempty"`
@@ -381,7 +381,7 @@ type InventoryItem struct {
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 	// Organizational asset identifier that is unique in the context of the system. This may be a reference to the identifier used in an asset tracking system or a vulnerability scanning tool.
-	AssetId string `xml:"asset-id,attr,omitempty" json:"assetId,omitempty"`
+	AssetId string `xml:"asset-id,attr,omitempty" json:"asset-id,omitempty"`
 
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -403,7 +403,7 @@ type InventoryItem struct {
 type ImplementedComponent struct {
 
 	// A reference to a component that is implemented as part of an inventory item.
-	ComponentUuid string `xml:"component-uuid,attr,omitempty" json:"componentUuid,omitempty"`
+	ComponentUuid string `xml:"component-uuid,attr,omitempty" json:"component-uuid,omitempty"`
 	// The type of implementation
 	Use string `xml:"use,attr,omitempty" json:"use,omitempty"`
 
@@ -434,7 +434,7 @@ type ImplementedRequirement struct {
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 	// A reference to a control identifier.
-	ControlId string `xml:"control-id,attr,omitempty" json:"controlId,omitempty"`
+	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
@@ -460,7 +460,7 @@ type ImplementedRequirement struct {
 type Statement struct {
 
 	// A reference to the specific implemented statement associated with a control.
-	StatementId string `xml:"statement-id,attr,omitempty" json:"statementId,omitempty"`
+	StatementId string `xml:"statement-id,attr,omitempty" json:"statement-id,omitempty"`
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
@@ -484,7 +484,7 @@ type Statement struct {
 type ByComponent struct {
 
 	// A reference to the component that is implementing a given control or control statement.
-	ComponentUuid string `xml:"component-uuid,attr,omitempty" json:"componentUuid,omitempty"`
+	ComponentUuid string `xml:"component-uuid,attr,omitempty" json:"component-uuid,omitempty"`
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
@@ -507,7 +507,7 @@ type ByComponent struct {
 // A unique identifier for the system described by this system security plan.
 type SystemId struct {
 	// Identifies the identification system from which the provided identifier was assigned.
-	IdentifierType string `xml:"identifier-type,attr,omitempty" json:"identifierType,omitempty"`
+	IdentifierType string `xml:"identifier-type,attr,omitempty" json:"identifier-type,omitempty"`
 	Id             string `xml:",chardata" json:"id,omitempty"`
 }
 

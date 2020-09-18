@@ -22,7 +22,7 @@ type Param struct {
 	// Indicating the type or classification of the containing object
 	Class string `xml:"class,attr,omitempty" json:"class,omitempty"`
 	// Another parameter invoking this one
-	DependsOn string `xml:"depends-on,attr,omitempty" json:"dependsOn,omitempty"`
+	DependsOn string `xml:"depends-on,attr,omitempty" json:"depends-on,omitempty"`
 
 	// A short name for the parameter.
 	Label Label `xml:"label,omitempty" json:"label,omitempty"`
@@ -51,7 +51,7 @@ type Guideline struct {
 type Select struct {
 
 	// When selecting, a requirement such as one or more
-	HowMany string `xml:"how-many,attr,omitempty" json:"howMany,omitempty"`
+	HowMany string `xml:"how-many,attr,omitempty" json:"how-many,omitempty"`
 
 	// A value selection among several such options
 	Alternatives []Choice `xml:"choice,omitempty" json:"alternatives,omitempty"`
