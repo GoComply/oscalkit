@@ -21,18 +21,6 @@ func Diff(a *oscal.OSCAL, b *oscal.OSCAL) (string, error) {
 		return "", fmt.Errorf("Could not compare OSCAL resources, type mismatch '%s' vs '%s'", a.DocumentType(), b.DocumentType())
 	}
 
-	switch a.DocumentType() {
-	case constants.CatalogDocument:
-		if a.Catalog.XMLName.Space != b.Catalog.XMLName.Space {
-			if a.Catalog.XMLName.Space == "" {
-				a.Catalog.XMLName = b.Catalog.XMLName
-			}
-			if b.Catalog.XMLName.Space == "" {
-				b.Catalog.XMLName = a.Catalog.XMLName
-			}
-		}
-	}
-
 	as := spewConfig.Sdump(a)
 	bs := spewConfig.Sdump(b)
 
@@ -44,4 +32,19 @@ func Diff(a *oscal.OSCAL, b *oscal.OSCAL) (string, error) {
 		Context:  3,
 	}
 	return difflib.GetUnifiedDiffString(diff)
+}
+
+// Hide xml vs json related differences
+func hideFormatRelatedDifferences(a *oscal.OSCAL, b *oscal.OSCAL) {
+	switch a.DocumentType() {
+	case constants.CatalogDocument:
+		if a.Catalog.XMLName.Space != b.Catalog.XMLName.Space {
+			if a.Catalog.XMLName.Space == "" {
+				a.Catalog.XMLName = b.Catalog.XMLName
+			}
+			if b.Catalog.XMLName.Space == "" {
+				b.Catalog.XMLName = a.Catalog.XMLName
+			}
+		}
+	}
 }
