@@ -2,9 +2,11 @@ package cmd
 
 import (
 	"fmt"
+	"errors"
 
 	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	"github.com/gocomply/oscalkit/pkg/oscal_source"
+	"github.com/gocomply/oscalkit/types/oscal"
 	"github.com/gocomply/oscalkit/types/oscal/catalog"
 	"github.com/gocomply/oscalkit/types/oscal/profile"
 	"github.com/urfave/cli"
@@ -22,47 +24,50 @@ var Info = cli.Command{
 			}
 			defer os.Close()
 
-			o := os.OSCAL()
-			switch o.DocumentType() {
-			case constants.SSPDocument:
-				fmt.Println("OSCAL System Security Plan")
-				fmt.Println("UUID:\t", o.SystemSecurityPlan.Uuid)
-				printMetadata(o.SystemSecurityPlan.Metadata)
-				return nil
-			case constants.ComponentDocument:
-				fmt.Println("OSCAL Component (represents information about particular software asset/component)")
-				printMetadata(o.Component.Metadata)
-				return nil
-			case constants.ProfileDocument:
-				fmt.Println("OSCAL Profile (represents tailoring of controls from OSCAL catalog(s) or profile(s))")
-				fmt.Println("UUID:\t", o.Profile.Uuid)
-				printMetadata(o.Profile.Metadata)
-				return printImports(o.Profile)
-			case constants.CatalogDocument:
-				fmt.Println("OSCAL Catalog (represents library of control assessment objectives and activities)")
-				fmt.Println("UUID:\t", o.Catalog.Uuid)
-				printMetadata(o.Catalog.Metadata)
-				return nil
-			case constants.POAMDocument:
-				fmt.Printf("OSCAL %s (represents the known risks for a specific system, as well as the identified deviations, remediation plan, and disposition status of each risk)\n", o.DocumentType().String())
-				fmt.Println("UUID:\t", o.PlanOfActionAndMilestones.Uuid)
-				printMetadata(o.PlanOfActionAndMilestones.Metadata)
-				return nil
-			case constants.AssessmentPlanDocument:
-				fmt.Printf("OSCAL %s (represents the planning of a periodic or continuous assessment)\n", o.DocumentType().String())
-				fmt.Println("UUID:\t", o.AssessmentPlan.Uuid)
-				printMetadata(o.AssessmentPlan.Metadata)
-				return nil
-			case constants.AssessmentResultsDocument:
-				fmt.Printf("OSCAL %s (represents the findings of a periodic or continuous assessment of a specific system)\n", o.DocumentType().String())
-				fmt.Println("UUID:\t", o.AssessmentResults.Uuid)
-				printMetadata(o.AssessmentResults.Metadata)
-				return nil
-			}
-			return cli.NewExitError("Unrecognized OSCAL resource", 1)
+			return printInfo(os.OSCAL())
 		}
 		return cli.NewExitError("No file provided", 1)
 	},
+}
+
+func printInfo(o *oscal.OSCAL) error {
+	switch o.DocumentType() {
+	case constants.SSPDocument:
+		fmt.Println("OSCAL System Security Plan")
+		fmt.Println("UUID:\t", o.SystemSecurityPlan.Uuid)
+		printMetadata(o.SystemSecurityPlan.Metadata)
+		return nil
+	case constants.ComponentDocument:
+		fmt.Println("OSCAL Component (represents information about particular software asset/component)")
+		printMetadata(o.Component.Metadata)
+		return nil
+	case constants.ProfileDocument:
+		fmt.Println("OSCAL Profile (represents tailoring of controls from OSCAL catalog(s) or profile(s))")
+		fmt.Println("UUID:\t", o.Profile.Uuid)
+		printMetadata(o.Profile.Metadata)
+		return printImports(o.Profile)
+	case constants.CatalogDocument:
+		fmt.Println("OSCAL Catalog (represents library of control assessment objectives and activities)")
+		fmt.Println("UUID:\t", o.Catalog.Uuid)
+		printMetadata(o.Catalog.Metadata)
+		return nil
+	case constants.POAMDocument:
+		fmt.Printf("OSCAL %s (represents the known risks for a specific system, as well as the identified deviations, remediation plan, and disposition status of each risk)\n", o.DocumentType().String())
+		fmt.Println("UUID:\t", o.PlanOfActionAndMilestones.Uuid)
+		printMetadata(o.PlanOfActionAndMilestones.Metadata)
+		return nil
+	case constants.AssessmentPlanDocument:
+		fmt.Printf("OSCAL %s (represents the planning of a periodic or continuous assessment)\n", o.DocumentType().String())
+		fmt.Println("UUID:\t", o.AssessmentPlan.Uuid)
+		printMetadata(o.AssessmentPlan.Metadata)
+		return nil
+	case constants.AssessmentResultsDocument:
+		fmt.Printf("OSCAL %s (represents the findings of a periodic or continuous assessment of a specific system)\n", o.DocumentType().String())
+		fmt.Println("UUID:\t", o.AssessmentResults.Uuid)
+		printMetadata(o.AssessmentResults.Metadata)
+		return nil
+	}
+	return errors.New("Unrecognized OSCAL resource")
 }
 
 func printMetadata(m *catalog.Metadata) {
