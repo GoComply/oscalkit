@@ -46,5 +46,14 @@ func hideFormatRelatedDifferences(a *oscal.OSCAL, b *oscal.OSCAL) {
 				b.Catalog.XMLName = a.Catalog.XMLName
 			}
 		}
+	case constants.SSPDocument:
+		if a.SystemSecurityPlan.XMLName.Space != b.SystemSecurityPlan.XMLName.Space {
+			if a.SystemSecurityPlan.XMLName.Space == "" {
+				a.SystemSecurityPlan.XMLName = b.SystemSecurityPlan.XMLName
+			}
+			if b.SystemSecurityPlan.XMLName.Space == "" {
+				b.SystemSecurityPlan.XMLName = a.SystemSecurityPlan.XMLName
+			}
+		}
 	}
 }
