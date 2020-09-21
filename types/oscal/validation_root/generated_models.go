@@ -44,7 +44,7 @@ type Metadata struct {
 	// Additional commentary on the parent item.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).
-	RevisionHistory []Revision `xml:"revision,omitempty" json:"revision-history,omitempty"`
+	RevisionHistory []Revision `xml:"revision-history>revision,omitempty" json:"revision-history,omitempty"`
 	// Defining a role to be assigned to a party
 	Roles []Role `xml:"role,omitempty" json:"roles,omitempty"`
 	// A location, with associated metadata that can be referenced.
