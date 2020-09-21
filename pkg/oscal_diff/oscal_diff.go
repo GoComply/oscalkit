@@ -3,10 +3,10 @@ package oscal_diff
 import (
 	"fmt"
 
-	"github.com/pmezard/go-difflib/difflib"
-	"github.com/gocomply/oscalkit/types/oscal"
-	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	"github.com/davecgh/go-spew/spew"
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/types/oscal"
+	"github.com/pmezard/go-difflib/difflib"
 )
 
 var spewConfig = spew.ConfigState{
@@ -45,6 +45,15 @@ func hideFormatRelatedDifferences(a *oscal.OSCAL, b *oscal.OSCAL) {
 			}
 			if b.Catalog.XMLName.Space == "" {
 				b.Catalog.XMLName = a.Catalog.XMLName
+			}
+		}
+	case constants.ProfileDocument:
+		if a.Profile.XMLName.Space != b.Profile.XMLName.Space {
+			if a.Profile.XMLName.Space == "" {
+				a.Profile.XMLName = b.Profile.XMLName
+			}
+			if b.Profile.XMLName.Space == "" {
+				b.Profile.XMLName = a.Profile.XMLName
 			}
 		}
 	case constants.SSPDocument:
