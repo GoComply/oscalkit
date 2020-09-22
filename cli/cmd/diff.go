@@ -3,8 +3,8 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/gocomply/oscalkit/pkg/oscal_source"
 	"github.com/gocomply/oscalkit/pkg/oscal_diff"
+	"github.com/gocomply/oscalkit/pkg/oscal_source"
 	"github.com/urfave/cli"
 )
 
@@ -36,7 +36,9 @@ var Diff = cli.Command{
 		if err != nil {
 			return err
 		}
-		fmt.Println(text)
+		if text != "" {
+			return cli.NewExitError(text, 2)
+		}
 		return nil
 	},
 }
