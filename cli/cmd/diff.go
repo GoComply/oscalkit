@@ -33,11 +33,12 @@ var Diff = cli.Command{
 		defer osB.Close()
 
 		text, err := oscal_diff.Diff(osA.OSCAL(), osB.OSCAL())
+		fmt.Println(text)
 		if err != nil {
 			return err
 		}
 		if text != "" {
-			return cli.NewExitError(text, 2)
+			return cli.NewExitError("", 2)
 		}
 		return nil
 	},
