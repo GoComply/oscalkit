@@ -436,8 +436,6 @@ type ImplementedRequirement struct {
 	// A reference to a control identifier.
 	ControlId string `xml:"control-id,attr,omitempty" json:"control-id,omitempty"`
 
-	// A description supporting the parent item.
-	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// A reference to a local or remote resource
@@ -464,8 +462,6 @@ type Statement struct {
 	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
-	// A description supporting the parent item.
-	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// A reference to a local or remote resource
@@ -498,10 +494,119 @@ type ByComponent struct {
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 	// A name/value pair with optional explanatory remarks.
 	Annotations []Annotation `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	// Identifies content intended for external consumption, such as with leveraged organizations.
+	Export *Export `xml:"export,omitempty" json:"export,omitempty"`
+	// Describes a responsibiity imposed on a leveraging system.
+	InheritedGroup InheritedMultiplexer `xml:"inherited,omitempty" json:"inherited-group,omitempty"`
+	// Describes how this system satisfies a responsibiity imposed by a leveraged system.
+	SatisfiedGroup SatisfiedMultiplexer `xml:"satisfied,omitempty" json:"satisfied-group,omitempty"`
 	// A reference to one or more roles with responsibility for performing a function relative to the control.
 	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 	// Identifies the parameter that will be filled in by the enclosed value element.
 	ParameterSettings SetParameterMultiplexer `xml:"set-parameter,omitempty" json:"parameter-settings,omitempty"`
+}
+
+// Identifies content intended for external consumption, such as with leveraged organizations.
+type Export struct {
+
+	// A description supporting the parent item.
+	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
+	// A value with a name, attributed to the containing control, part, or group.
+	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
+	// A reference to a local or remote resource
+	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
+	// Additional commentary on the parent item.
+	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
+	// A name/value pair with optional explanatory remarks.
+	Annotations AnnotationMultiplexer `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	// Describes a capability which may be inherited by a leveraging system.
+	ProvidedGroup ProvidedMultiplexer `xml:"provided,omitempty" json:"provided-group,omitempty"`
+	// Describes a responsibiity imposed on a leveraging system.
+	Responsibilities ResponsibilityMultiplexer `xml:"responsibility,omitempty" json:"responsibilities,omitempty"`
+}
+
+// Describes a capability which may be inherited by a leveraging system.
+type Provided struct {
+
+	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
+	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
+
+	// A description supporting the parent item.
+	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
+	// A value with a name, attributed to the containing control, part, or group.
+	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
+	// A reference to a local or remote resource
+	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
+	// Additional commentary on the parent item.
+	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
+	// A name/value pair with optional explanatory remarks.
+	Annotations AnnotationMultiplexer `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	// A reference to one or more roles with responsibility for performing a function relative to the control.
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+}
+
+// Describes a responsibiity imposed on a leveraging system.
+type Responsibility struct {
+
+	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
+	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
+	// Identifies a 'provided' assembly associated with this assembly.
+	ProvidedUuid string `xml:"provided-uuid,attr,omitempty" json:"provided-uuid,omitempty"`
+
+	// A description supporting the parent item.
+	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
+	// A value with a name, attributed to the containing control, part, or group.
+	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
+	// A reference to a local or remote resource
+	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
+	// Additional commentary on the parent item.
+	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
+	// A name/value pair with optional explanatory remarks.
+	Annotations AnnotationMultiplexer `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	// A reference to one or more roles with responsibility for performing a function relative to the control.
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+}
+
+// Describes a responsibiity imposed on a leveraging system.
+type Inherited struct {
+
+	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
+	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
+	// Identifies a 'provided' assembly associated with this assembly.
+	ProvidedUuid string `xml:"provided-uuid,attr,omitempty" json:"provided-uuid,omitempty"`
+
+	// A description supporting the parent item.
+	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
+	// A value with a name, attributed to the containing control, part, or group.
+	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
+	// A reference to a local or remote resource
+	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
+	// A name/value pair with optional explanatory remarks.
+	Annotations AnnotationMultiplexer `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	// A reference to one or more roles with responsibility for performing a function relative to the control.
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
+}
+
+// Describes how this system satisfies a responsibiity imposed by a leveraged system.
+type Satisfied struct {
+
+	// A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
+	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
+	// Identifies a 'provided' assembly associated with this assembly.
+	ResponsibilityUuid string `xml:"responsibility-uuid,attr,omitempty" json:"responsibility-uuid,omitempty"`
+
+	// A description supporting the parent item.
+	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
+	// A value with a name, attributed to the containing control, part, or group.
+	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
+	// A reference to a local or remote resource
+	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
+	// Additional commentary on the parent item.
+	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
+	// A name/value pair with optional explanatory remarks.
+	Annotations AnnotationMultiplexer `xml:"annotation,omitempty" json:"annotations,omitempty"`
+	// A reference to one or more roles with responsibility for performing a function relative to the control.
+	ResponsibleRoles ResponsibleRoleMultiplexer `xml:"responsible-role,omitempty" json:"responsible-roles,omitempty"`
 }
 
 // A unique identifier for the system described by this system security plan.
