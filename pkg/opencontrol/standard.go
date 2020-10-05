@@ -53,7 +53,7 @@ func (std *Standard) SaveToFile(filename string) error {
 }
 
 func (controls Controls) Add(ctrl *catalog.Control, family string) {
-	controls[strings.ToUpper(ctrl.Id)] = Control{
+	controls[oscalIdToOpencontrol(ctrl.Id)] = Control{
 		Family:      family,
 		Name:        string(ctrl.Title),
 		Description: "TODO",
@@ -61,4 +61,8 @@ func (controls Controls) Add(ctrl *catalog.Control, family string) {
 	for _, child := range ctrl.Controls {
 		controls.Add(&child, family)
 	}
+}
+
+func oscalIdToOpencontrol(id string) string {
+	return strings.ToUpper(id)
 }
