@@ -58,5 +58,7 @@ func (controls Controls) Add(ctrl *catalog.Control, family string) {
 		Name:        string(ctrl.Title),
 		Description: "TODO",
 	}
-
+	for _, child := range ctrl.Controls {
+		controls.Add(&child, family)
+	}
 }
