@@ -26,18 +26,14 @@ func NewStandard(catalog *catalog.Catalog) (*Standard, error) {
 	if len(catalog.Controls) != 0 {
 		return nil, fmt.Errorf("Direct controls in the catalog not implemented yet")
 	}
-	controls := map[string]Control{}
+	controls := Controls{}
 
 	for _, grp := range catalog.Groups {
 		if len(grp.Groups) != 0 {
 			return nil, fmt.Errorf("Groups inside groups in the catalog not implemented yet")
 		}
 		for _, ctrl := range grp.Controls {
-			controls[strings.ToUpper(ctrl.Id)] = Control{
-				Family:      strings.ToUpper(grp.Id),
-				Name:        string(ctrl.Title),
-				Description: "TODO",
-			}
+			controls.Add(&ctrl, strings.ToUpper(grp.Id))
 		}
 	}
 
@@ -54,4 +50,13 @@ func (std *Standard) SaveToFile(filename string) error {
 	}
 
 	return ioutil.WriteFile(filename, y, 0644)
+}
+
+func (controls Controls) Add(ctrl *catalog.Control, family string) {
+	controls[strings.ToUpper(ctrl.Id)] = Control{
+		Family:      family,
+		Name:        string(ctrl.Title),
+		Description: "TODO",
+	}
+
 }
