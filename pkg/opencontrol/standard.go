@@ -4,6 +4,7 @@ import (
 	"fmt"
 	yaml "gopkg.in/yaml.v2"
 	"io/ioutil"
+	"regexp"
 	"strings"
 
 	"github.com/gocomply/oscalkit/types/oscal/catalog"
@@ -64,5 +65,10 @@ func (controls Controls) Add(ctrl *catalog.Control, family string) {
 }
 
 func oscalIdToOpencontrol(id string) string {
-	return strings.ToUpper(id)
+	re := regexp.MustCompile(`^([a-z][a-z])-([0-9]+).([0-9]+)$`)
+	match := re.FindStringSubmatch(id)
+	if len(match) == 0 {
+		return strings.ToUpper(id)
+	}
+	return strings.ToUpper(match[1]) + "-" + match[2] + " (" + match[3] + ")"
 }
