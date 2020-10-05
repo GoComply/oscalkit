@@ -10,9 +10,11 @@ import (
 )
 
 type Standard struct {
-	Name     string             `yaml:"name"`
-	Controls map[string]Control `yaml:",inline"`
+	Name     string   `yaml:"name"`
+	Controls Controls `yaml:",inline"`
 }
+
+type Controls map[string]Control
 
 type Control struct {
 	Family      string `yaml:"family"`
