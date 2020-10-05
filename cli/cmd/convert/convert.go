@@ -13,5 +13,6 @@ var Convert = cli.Command{
 	Subcommands: []cli.Command{
 		ConvertOSCAL,
 		ConvertHTML,
+		ConvertOpenControl,
 	},
 }
