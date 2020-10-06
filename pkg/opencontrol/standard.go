@@ -39,7 +39,7 @@ func NewStandard(catalog *catalog.Catalog) (*Standard, error) {
 	}
 
 	return &Standard{
-		Name:     string(catalog.Metadata.Title),
+		Name:     string(catalog.Metadata.Title.Raw),
 		Controls: controls,
 	}, nil
 }
@@ -56,7 +56,7 @@ func (std *Standard) SaveToFile(filename string) error {
 func (controls Controls) Add(ctrl *catalog.Control, family string) {
 	controls[oscalIdToOpencontrol(ctrl.Id)] = Control{
 		Family:      family,
-		Name:        string(ctrl.Title),
+		Name:        string(ctrl.Title.Raw),
 		Description: ctrl.StatementToMarkdown(),
 	}
 	for _, child := range ctrl.Controls {

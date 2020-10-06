@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 
 	"github.com/gocomply/oscalkit/pkg/oscal/constants"
 	"github.com/gocomply/oscalkit/pkg/oscal_source"
@@ -84,7 +84,7 @@ func printMetadata(m *catalog.Metadata) {
 		return
 	}
 	fmt.Println("Metadata:")
-	fmt.Println("\tTitle:\t\t\t", m.Title)
+	fmt.Println("\tTitle:\t\t\t", m.Title.Raw)
 	if m.Published != "" {
 		fmt.Println("\tPublished:\t\t", m.Published)
 	}
@@ -112,8 +112,8 @@ func printImports(p *profile.Profile) error {
 				return fmt.Errorf("Could not resolve profile import %s", imp.Href)
 			}
 
-			if resource.Title != "" {
-				fmt.Println("\tTitle:\t\t\t", resource.Title)
+			if resource.Title != nil {
+				fmt.Println("\tTitle:\t\t\t", resource.Title.Raw)
 			}
 			if resource.Desc != "" {
 				fmt.Println("\tDesc:\t\t\t", resource.Desc)

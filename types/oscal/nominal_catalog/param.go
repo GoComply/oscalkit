@@ -6,8 +6,8 @@ import (
 )
 
 func (param *Param) TextRepresentation() string {
-	if param.Label != "" {
-		return fmt.Sprintf("[Assignment: %s]", param.Label)
+	if param.Label != nil {
+		return fmt.Sprintf("[Assignment: %s]", param.Label.Raw)
 
 	}
 	if param.Select != nil {
@@ -18,7 +18,7 @@ func (param *Param) TextRepresentation() string {
 
 		choicesList := make([]string, len(param.Select.Alternatives))
 		for i, v := range param.Select.Alternatives {
-			choicesList[i] = string(v)
+			choicesList[i] = string(v.Raw)
 		}
 		choices := strings.Join(choicesList, ", ")
 
