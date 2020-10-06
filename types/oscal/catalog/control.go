@@ -32,7 +32,7 @@ func (c *Control) partToMarkdown(part *Part, textPrefix string) string {
 			}
 		}
 
-		result = textPrefix + label + part.Prose.Raw
+		result = textPrefix + label + part.ResolveInserts(c)
 		if result[len(result)-1] != '\n' {
 			result += "\n"
 		}
@@ -48,4 +48,13 @@ func (c *Control) partToMarkdown(part *Part, textPrefix string) string {
 	}
 
 	return result
+}
+
+func (c *Control) FindParam(id string) *Param {
+	for idx, param := range c.Parameters {
+		if param.Id == id {
+			return &c.Parameters[idx]
+		}
+	}
+	return nil
 }
