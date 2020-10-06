@@ -25,7 +25,7 @@ type Param struct {
 	DependsOn string `xml:"depends-on,attr,omitempty" json:"depends-on,omitempty"`
 
 	// A short name for the parameter.
-	Label *Label `xml:"label,omitempty" json:"label,omitempty"`
+	Label Label `xml:"label,omitempty" json:"label,omitempty"`
 	// Indicates and explains the purpose and use of a parameter
 	Descriptions []Usage `xml:"usage,omitempty" json:"descriptions,omitempty"`
 	// A formal or informal expression of a constraint or test
@@ -35,7 +35,7 @@ type Param struct {
 	// A prose statement that provides a recommendation for the use of a parameter.
 	Guidance []Guideline `xml:"guideline,omitempty" json:"guidance,omitempty"`
 	// A recommended parameter value or set of values.
-	Value *Value `xml:"value,omitempty" json:"value,omitempty"`
+	Value Value `xml:"value,omitempty" json:"value,omitempty"`
 	// A set of parameter value choices, that may be picked from to set the parameter value.
 	Select *Select `xml:"select,omitempty" json:"select,omitempty"`
 }
@@ -70,7 +70,7 @@ type Part struct {
 	Class string `xml:"class,attr,omitempty" json:"class,omitempty"`
 
 	// A title for display and navigation
-	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// Prose permits multiple paragraphs, lists, tables etc.
@@ -82,7 +82,8 @@ type Part struct {
 }
 
 // A placeholder for a missing value, in display.
-type Label = Markup
+
+type Label string
 
 // Indicates and explains the purpose and use of a parameter
 type Usage struct {
@@ -99,10 +100,12 @@ type Constraint struct {
 }
 
 // Indicates a permissible value for a parameter or property
-type Value = Markup
+
+type Value string
 
 // A value selection among several such options
-type Choice = Markup
+
+type Choice string
 
 // Prose permits multiple paragraphs, lists, tables etc.
 type Prose = Markup
