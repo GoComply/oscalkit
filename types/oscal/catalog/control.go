@@ -8,3 +8,36 @@ func (c *Control) FindParamById(id string) *Param {
 	}
 	return nil
 }
+
+func (c *Control) StatementToMarkdown() string {
+	result := ""
+	for _, part := range c.Parts {
+		if part.Name != "statement" {
+			continue
+		}
+		result += c.partToMarkdown(&part, "")
+	}
+
+	return result
+}
+
+func (c *Control) partToMarkdown(part *Part, textPrefix string) string {
+	result := ""
+	if part.Prose != nil {
+		result = textPrefix + part.Prose.Raw
+		if result[len(result)-1] != '\n' {
+			result += "\n"
+		}
+	}
+
+	prefix := "  " + textPrefix
+	if textPrefix == "" {
+		prefix = " - "
+	}
+
+	for _, child := range part.Parts {
+		result += c.partToMarkdown(&child, prefix)
+	}
+
+	return result
+}

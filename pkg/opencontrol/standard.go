@@ -57,7 +57,7 @@ func (controls Controls) Add(ctrl *catalog.Control, family string) {
 	controls[oscalIdToOpencontrol(ctrl.Id)] = Control{
 		Family:      family,
 		Name:        string(ctrl.Title),
-		Description: "TODO",
+		Description: ctrl.StatementToMarkdown(),
 	}
 	for _, child := range ctrl.Controls {
 		controls.Add(&child, family)
