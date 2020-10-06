@@ -98,7 +98,7 @@ type InformationType struct {
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
 	// A human readable name for the information type. This title should be meaningful within the context of the system.
-	Title Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// An identifier qualified by the given identification  used, such as NIST SP 800-60.
@@ -180,7 +180,7 @@ type LeveragedAuthorization struct {
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
 	// A human readable name for the leveraged authorization in the context of the system.
-	Title Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// A reference to a local or remote resource
@@ -225,7 +225,7 @@ type Diagram struct {
 	// A reference to a local or remote resource
 	Links []Link `xml:"link,omitempty" json:"links,omitempty"`
 	// A brief caption to annotate the diagram.
-	Caption Caption `xml:"caption,omitempty" json:"caption,omitempty"`
+	Caption *Caption `xml:"caption,omitempty" json:"caption,omitempty"`
 	// Commentary about the diagram that enhances it.
 	Remarks *Remarks `xml:"remarks,omitempty" json:"remarks,omitempty"`
 }
@@ -292,7 +292,7 @@ type User struct {
 	Uuid string `xml:"uuid,attr,omitempty" json:"uuid,omitempty"`
 
 	// A title for display and navigation
-	Title Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A common name, short name or acronym
 	ShortName ShortName `xml:"short-name,omitempty" json:"short-name,omitempty"`
 	// A description supporting the parent item.
@@ -315,7 +315,7 @@ type User struct {
 type AuthorizedPrivilege struct {
 
 	// A human readable name for the privilege.
-	Title Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// Describes a  function performed for a given authorized privilege by this user class.
@@ -331,11 +331,11 @@ type Component struct {
 	ComponentType string `xml:"component-type,attr,omitempty" json:"component-type,omitempty"`
 
 	// A human readable name for the system component.
-	Title Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
 	// A description of the component, including information about its function.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// A summary of the technological or business purpose of the component.
-	Purpose Purpose `xml:"purpose,omitempty" json:"purpose,omitempty"`
+	Purpose *Purpose `xml:"purpose,omitempty" json:"purpose,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// A reference to a local or remote resource
@@ -361,7 +361,7 @@ type Protocol struct {
 	Name string `xml:"name,attr,omitempty" json:"name,omitempty"`
 
 	// A human readable name for the protocol (e.g., Transport Layer Security).
-	Title Title `xml:"title,omitempty" json:"title,omitempty"`
+	Title *Title `xml:"title,omitempty" json:"title,omitempty"`
 	// Where applicable this is the IPv4 port range on which the service operates.
 	PortRanges []PortRange `xml:"port-range,omitempty" json:"port-ranges,omitempty"`
 }
@@ -663,8 +663,7 @@ type SecurityObjectiveAvailability string
 type DateAuthorized string
 
 // A brief caption to annotate the diagram.
-
-type Caption string
+type Caption = Markup
 
 // A reference to the roles served by the user.
 
@@ -687,8 +686,7 @@ type PortRange struct {
 }
 
 // Describes the purpose for the service within the system.
-
-type Purpose string
+type Purpose = Markup
 
 type ResponsiblePartyMultiplexer = validation_root.ResponsiblePartyMultiplexer
 
