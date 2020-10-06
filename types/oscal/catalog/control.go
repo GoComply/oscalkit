@@ -24,7 +24,15 @@ func (c *Control) StatementToMarkdown() string {
 func (c *Control) partToMarkdown(part *Part, textPrefix string) string {
 	result := ""
 	if part.Prose != nil {
-		result = textPrefix + part.Prose.Raw
+		label := ""
+		for _, prop := range part.Properties {
+			if prop.Name == "label" {
+				label += prop.Value + " "
+				break
+			}
+		}
+
+		result = textPrefix + label + part.Prose.Raw
 		if result[len(result)-1] != '\n' {
 			result += "\n"
 		}
