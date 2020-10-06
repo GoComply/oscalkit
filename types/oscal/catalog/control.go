@@ -1,5 +1,9 @@
 package catalog
 
+import (
+	"strings"
+)
+
 func (c *Control) FindParamById(id string) *Param {
 	for i, param := range c.Parameters {
 		if param.Id == id {
@@ -32,10 +36,7 @@ func (c *Control) partToMarkdown(part *Part, textPrefix string) string {
 			}
 		}
 
-		result = textPrefix + label + part.ResolveInserts(c)
-		if result[len(result)-1] != '\n' {
-			result += "\n"
-		}
+		result = textPrefix + label + strings.TrimSpace(part.ResolveInserts(c)) + "\n"
 	}
 
 	prefix := "  " + textPrefix
