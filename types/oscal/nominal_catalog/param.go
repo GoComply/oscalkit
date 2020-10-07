@@ -18,7 +18,7 @@ func (param *Param) TextRepresentation() string {
 
 		choicesList := make([]string, len(param.Select.Alternatives))
 		for i, v := range param.Select.Alternatives {
-			choicesList[i] = string(v.Raw)
+			choicesList[i] = strings.TrimSpace(string(v.Raw))
 		}
 		choices := strings.Join(choicesList, ", ")
 
