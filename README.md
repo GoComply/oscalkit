@@ -1,4 +1,4 @@
-# oscalkit ![Build CI](https://github.com/GoComply/oscalkit/workflows/Build%20CI/badge.svg) [![Gitter](https://badges.gitter.im/GoComply/community.svg)](https://gitter.im/GoComply/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+# oscalkit ![Build CI](https://github.com/GoComply/oscalkit/workflows/Build%20CI/badge.svg) [![Gitter](https://badges.gitter.im/GoComply/community.svg)](https://gitter.im/GoComply/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![PkgGoDev](https://pkg.go.dev/badge/github.com/gocomply/oscalkit)](https://pkg.go.dev/github.com/gocomply/oscalkit)
 
 > This project has been forked from [docker/oscalkit](https://github.com/docker/oscalkit). [Docker, Inc.](https://www.docker.com/company) did great service to the open source world by releasing initial oscalkit implementation under public domain license. Unfortunately, oscalkit development stalled after March 2019, while [upstream OSCAL](https://github.com/usnistgov/OSCAL) took leap steps and almost re-designed the OSCAL from scratch rendering original oscalkit unusable. This fork is attempt to keep original code lively and re-build community around it.
 
