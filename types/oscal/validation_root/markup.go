@@ -12,13 +12,19 @@ type Markup struct {
 	PlainText string `xml:"-"`
 }
 
-func MarkupFromPlain(plain string) *Markup {
+// Short-hand method to build "markup-multiline" text
+func MML(plain string) *Markup {
 	plain = strings.ReplaceAll(plain, "&", "&amp;")
 	plain = strings.ReplaceAll(plain, "<", "&lt;")
 	plain = strings.ReplaceAll(plain, "<", "&gt;")
 	return &Markup{
 		Raw: "<p>" + plain + "</p>",
 	}
+}
+
+// Deprecated: Use validation_root.MML instead.
+func MarkupFromPlain(plain string) *Markup {
+	return MML(plain)
 }
 
 // PlainText representation
