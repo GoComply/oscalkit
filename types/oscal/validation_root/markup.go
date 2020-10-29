@@ -12,6 +12,16 @@ type Markup struct {
 	PlainText string `xml:"-"`
 }
 
+// Short-hand method to build "markup-line" text
+func ML(plain string) *Markup {
+	plain = strings.ReplaceAll(plain, "&", "&amp;")
+	plain = strings.ReplaceAll(plain, "<", "&lt;")
+	plain = strings.ReplaceAll(plain, "<", "&gt;")
+	return &Markup{
+		Raw: plain,
+	}
+}
+
 // Short-hand method to build "markup-multiline" text
 func MML(plain string) *Markup {
 	plain = strings.ReplaceAll(plain, "&", "&amp;")
