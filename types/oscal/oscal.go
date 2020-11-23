@@ -36,7 +36,7 @@ type OSCAL struct {
 	Catalog *catalog.Catalog `json:"catalog,omitempty" yaml:"catalog,omitempty"`
 	// Declarations *Declarations `json:"declarations,omitempty" yaml:"declarations,omitempty"`
 	Profile                         *profile.Profile `json:"profile,omitempty" yaml:"profile,omitempty"`
-	*ssp.SystemSecurityPlan         `xml:"system-security-plan"`
+	*ssp.SystemSecurityPlan         `xml:"system-security-plan" json:"system-security-plan"`
 	*poam.PlanOfActionAndMilestones `xml:"plan-of-action-and-milestones"`
 	*sap.AssessmentPlan             `xml:"assessment-plan"`
 	*sar.AssessmentResults          `xml:"assessment-results"`
