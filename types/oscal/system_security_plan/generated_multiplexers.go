@@ -40,7 +40,7 @@ func (mplex *AnnotationMultiplexer) MarshalJSON() ([]byte, error) {
 		}
 		empty = false
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -87,7 +87,7 @@ func (mplex *ByComponentMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -134,7 +134,7 @@ func (mplex *ComponentMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -181,7 +181,7 @@ func (mplex *DiagramMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -228,7 +228,7 @@ func (mplex *ImplementedComponentMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -274,7 +274,7 @@ func (mplex *InheritedMultiplexer) MarshalJSON() ([]byte, error) {
 		}
 		empty = false
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -321,7 +321,7 @@ func (mplex *InventoryItemMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -367,7 +367,7 @@ func (mplex *ProvidedMultiplexer) MarshalJSON() ([]byte, error) {
 		}
 		empty = false
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -413,7 +413,7 @@ func (mplex *ResponsibilityMultiplexer) MarshalJSON() ([]byte, error) {
 		}
 		empty = false
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -459,7 +459,7 @@ func (mplex *SatisfiedMultiplexer) MarshalJSON() ([]byte, error) {
 		}
 		empty = false
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -506,7 +506,7 @@ func (mplex *StatementMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
@@ -553,7 +553,7 @@ func (mplex *UserMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}

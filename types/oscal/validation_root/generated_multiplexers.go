@@ -41,7 +41,7 @@ func (mplex *ResponsiblePartyMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		text, err := json.Marshal(v)
+		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
 		}
