@@ -102,7 +102,7 @@ type InformationType struct {
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// An identifier qualified by the given identification  used, such as NIST SP 800-60.
-	InformationTypeIds []InformationTypeId `xml:"information-type-id,omitempty" json:"information-type-ids,omitempty"`
+	InformationTypeIds InformationTypeIdMultiplexer `xml:"information-type-id,omitempty" json:"information-type-ids,omitempty"`
 	// A value with a name, attributed to the containing control, part, or group.
 	Properties []Prop `xml:"prop,omitempty" json:"properties,omitempty"`
 	// The expected level of impact resulting from the unauthorized disclosure of information.

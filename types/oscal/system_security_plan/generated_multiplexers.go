@@ -242,6 +242,53 @@ func (mplex *ImplementedComponentMultiplexer) MarshalJSON() ([]byte, error) {
 	return js.Bytes(), nil
 }
 
+type InformationTypeIdMultiplexer []InformationTypeId
+
+func (mplex *InformationTypeIdMultiplexer) UnmarshalJSON(b []byte) error {
+	var insideMap map[string]InformationTypeId
+	if err := json.Unmarshal(b, &insideMap); err != nil {
+		return err
+	}
+
+	l := make([]InformationTypeId, 0, len(insideMap))
+	for k, v := range insideMap {
+		v.System = k
+		l = append(l, v)
+	}
+	(*mplex) = l
+	return nil
+}
+
+func (mplex *InformationTypeIdMultiplexer) MarshalJSON() ([]byte, error) {
+	js := bytes.NewBuffer([]byte{'{'})
+
+	empty := true
+	for _, v := range *mplex {
+		if !empty {
+			if err := js.WriteByte(','); err != nil {
+				return []byte{}, err
+			}
+		}
+		empty = false
+
+		if _, err := js.WriteString("\"" + v.System + "\":"); err != nil {
+			return []byte{}, err
+		}
+
+		text, err := json.Marshal(&v)
+		if err != nil {
+			return []byte{}, err
+		}
+		if _, err = js.Write(text); err != nil {
+			return []byte{}, err
+		}
+	}
+	if err := js.WriteByte('}'); err != nil {
+		return []byte{}, err
+	}
+	return js.Bytes(), nil
+}
+
 type InheritedMultiplexer []Inherited
 
 func (mplex *InheritedMultiplexer) UnmarshalJSON(b []byte) error {
