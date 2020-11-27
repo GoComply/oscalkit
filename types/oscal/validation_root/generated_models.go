@@ -9,7 +9,7 @@ type VALIDATIONRoot struct {
 	// Provides information about the publication and availability of the containing document.
 	Metadata *Metadata `xml:"metadata,omitempty" json:"metadata,omitempty"`
 	// A collection of citations and resource references.
-	BackMatter *BackMatter `xml:"back-matter,omitempty" json:"backMatter,omitempty"`
+	BackMatter *BackMatter `xml:"back-matter,omitempty" json:"back-matter,omitempty"`
 	// A description supporting the parent item.
 	Description *Description `xml:"description,omitempty" json:"description,omitempty"`
 	// Additional commentary on the parent item.
