@@ -87,7 +87,6 @@ func (mplex *ByComponentMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.ComponentUuid = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -135,7 +134,6 @@ func (mplex *ComponentMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.Uuid = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -183,7 +181,6 @@ func (mplex *DiagramMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.Uuid = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -231,7 +228,6 @@ func (mplex *ImplementedComponentMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.ComponentUuid = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -279,7 +275,6 @@ func (mplex *InformationTypeIdMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.System = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -373,7 +368,6 @@ func (mplex *InventoryItemMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.Uuid = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -559,7 +553,6 @@ func (mplex *StatementMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.StatementId = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
@@ -607,7 +600,6 @@ func (mplex *UserMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
-		v.Uuid = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
