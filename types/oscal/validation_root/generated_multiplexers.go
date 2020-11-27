@@ -41,6 +41,7 @@ func (mplex *ResponsiblePartyMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
+		v.RoleId = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err

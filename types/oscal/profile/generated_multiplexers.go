@@ -41,6 +41,7 @@ func (mplex *SetParameterMultiplexer) MarshalJSON() ([]byte, error) {
 			return []byte{}, err
 		}
 
+		v.ParamId = ""
 		text, err := json.Marshal(&v)
 		if err != nil {
 			return []byte{}, err
