@@ -613,7 +613,7 @@ type Satisfied struct {
 type SystemId struct {
 	// Identifies the identification system from which the provided identifier was assigned.
 	IdentifierType string `xml:"identifier-type,attr,omitempty" json:"identifier-type,omitempty"`
-	Id             string `xml:",chardata" json:"id,omitempty"`
+	Id             string `xml:",chardata" json:"id"`
 }
 
 // The full name of the system.
@@ -632,7 +632,7 @@ type SecuritySensitivityLevel string
 type InformationTypeId struct {
 	// Specifies the information type identification system used.
 	System string `xml:"system,attr,omitempty" json:"system,omitempty"`
-	Id     string `xml:",chardata" json:"id,omitempty"`
+	Id     string `xml:",chardata" json:"id"`
 }
 
 // The prescribed base (Confidentiality, Integrity, or Availability) security impact level.
