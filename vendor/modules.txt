@@ -2,7 +2,7 @@
 github.com/davecgh/go-spew/spew
 # github.com/gobuffalo/here v0.6.0
 github.com/gobuffalo/here
-# github.com/google/uuid v1.1.4
+# github.com/google/uuid v1.2.0
 github.com/google/uuid
 # github.com/markbates/pkger v0.17.1
 github.com/markbates/pkger
