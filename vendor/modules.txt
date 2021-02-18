@@ -4,6 +4,9 @@ github.com/davecgh/go-spew/spew
 github.com/gobuffalo/here
 # github.com/google/uuid v1.1.4
 github.com/google/uuid
+# github.com/magefile/mage v1.10.0
+github.com/magefile/mage/mg
+github.com/magefile/mage/sh
 # github.com/markbates/pkger v0.17.1
 github.com/markbates/pkger
 github.com/markbates/pkger/here
@@ -22,7 +25,7 @@ github.com/santhosh-tekuri/jsonschema/loader
 github.com/santhosh-tekuri/jsonschema/mediatypes
 # github.com/satori/go.uuid v1.2.0
 github.com/satori/go.uuid
-# github.com/sirupsen/logrus v1.7.0
+# github.com/sirupsen/logrus v1.8.0
 github.com/sirupsen/logrus
 # github.com/urfave/cli v0.0.0-20181029213200-b67dcf995b6a
 github.com/urfave/cli
