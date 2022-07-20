@@ -11,7 +11,7 @@ require (
 	github.com/sirupsen/logrus v1.9.0
 	github.com/urfave/cli v0.0.0-20181029213200-b67dcf995b6a
 	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2 // indirect
-	gopkg.in/square/go-jose.v2 v2.5.1
+	gopkg.in/square/go-jose.v2 v2.6.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
