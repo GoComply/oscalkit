@@ -1,3 +1,5 @@
+# github.com/cpuguy83/go-md2man/v2 v2.0.2
+github.com/cpuguy83/go-md2man/v2/md2man
 # github.com/davecgh/go-spew v1.1.1
 github.com/davecgh/go-spew/spew
 # github.com/gobuffalo/here v0.6.0
@@ -14,6 +16,8 @@ github.com/markbates/pkger/pkging/mem
 github.com/markbates/pkger/pkging/stdos
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
+# github.com/russross/blackfriday/v2 v2.1.0
+github.com/russross/blackfriday/v2
 # github.com/santhosh-tekuri/jsonschema v1.2.4
 github.com/santhosh-tekuri/jsonschema
 github.com/santhosh-tekuri/jsonschema/decoders
@@ -24,7 +28,7 @@ github.com/santhosh-tekuri/jsonschema/mediatypes
 github.com/satori/go.uuid
 # github.com/sirupsen/logrus v1.9.0
 github.com/sirupsen/logrus
-# github.com/urfave/cli v0.0.0-20181029213200-b67dcf995b6a
+# github.com/urfave/cli v1.22.12
 github.com/urfave/cli
 # golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
 golang.org/x/crypto/ed25519
