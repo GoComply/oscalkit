@@ -21,7 +21,7 @@ import (
 var profile string
 var excelSheet string
 
-//Implementation generates implemntation
+// Implementation generates implemntation
 var Implementation = cli.Command{
 	Name:  "implementation",
 	Usage: "generates go code for implementation against provided profile and excel sheet",
