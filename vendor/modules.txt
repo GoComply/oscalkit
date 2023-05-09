@@ -1,17 +1,19 @@
 # github.com/cpuguy83/go-md2man/v2 v2.0.2
+## explicit; go 1.11
 github.com/cpuguy83/go-md2man/v2/md2man
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
 # github.com/gobuffalo/here v0.6.0
+## explicit; go 1.13
 github.com/gobuffalo/here
 # github.com/google/go-cmp v0.5.2
-## explicit
+## explicit; go 1.8
 # github.com/google/uuid v1.3.0
 ## explicit
 github.com/google/uuid
 # github.com/markbates/pkger v0.17.1
-## explicit
+## explicit; go 1.13
 github.com/markbates/pkger
 github.com/markbates/pkger/here
 github.com/markbates/pkger/internal/maps
@@ -23,6 +25,7 @@ github.com/markbates/pkger/pkging/stdos
 ## explicit
 github.com/pmezard/go-difflib/difflib
 # github.com/russross/blackfriday/v2 v2.1.0
+## explicit
 github.com/russross/blackfriday/v2
 # github.com/santhosh-tekuri/jsonschema v1.2.4
 ## explicit
@@ -35,10 +38,10 @@ github.com/santhosh-tekuri/jsonschema/mediatypes
 ## explicit
 github.com/satori/go.uuid
 # github.com/sirupsen/logrus v1.9.0
-## explicit
+## explicit; go 1.13
 github.com/sirupsen/logrus
 # github.com/urfave/cli v1.22.13
-## explicit
+## explicit; go 1.11
 github.com/urfave/cli
 # golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
 ## explicit
@@ -46,6 +49,7 @@ golang.org/x/crypto/ed25519
 golang.org/x/crypto/ed25519/internal/edwards25519
 golang.org/x/crypto/pbkdf2
 # golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8
+## explicit; go 1.17
 golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
 golang.org/x/sys/windows
@@ -55,5 +59,5 @@ gopkg.in/square/go-jose.v2
 gopkg.in/square/go-jose.v2/cipher
 gopkg.in/square/go-jose.v2/json
 # gopkg.in/yaml.v2 v2.4.0
-## explicit
+## explicit; go 1.15
 gopkg.in/yaml.v2
