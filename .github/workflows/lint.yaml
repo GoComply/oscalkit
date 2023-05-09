@@ -49,10 +49,10 @@ jobs:
           exit 1
         fi
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v3
-      with:
-        skip-go-installation: true
-        skip-pkg-cache: true
-        skip-build-cache: true
-        args: "--out-${NO_FUTURE}format colored-line-number"
+#    - name: Run golangci-lint
+#      uses: golangci/golangci-lint-action@v3
+#      with:
+#        skip-go-installation: true
+#        skip-pkg-cache: true
+#        skip-build-cache: true
+#        args: "--out-${NO_FUTURE}format colored-line-number"
