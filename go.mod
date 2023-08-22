@@ -2,7 +2,7 @@ module github.com/gocomply/oscalkit
 
 require (
 	github.com/davecgh/go-spew v1.1.1
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.3.1
 	github.com/markbates/pkger v0.17.1
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/santhosh-tekuri/jsonschema v1.2.4
