@@ -17,7 +17,7 @@ jobs:
         uses: mstksg/get-package@master
         with:
                 apt-get: libxml2-utils
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Regenerate models
         run: |
           export PATH=~/go/bin:$PATH
