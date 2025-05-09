@@ -1,4 +1,4 @@
-# github.com/cpuguy83/go-md2man/v2 v2.0.4
+# github.com/cpuguy83/go-md2man/v2 v2.0.5
 ## explicit; go 1.11
 github.com/cpuguy83/go-md2man/v2/md2man
 # github.com/davecgh/go-spew v1.1.1
@@ -40,7 +40,7 @@ github.com/satori/go.uuid
 # github.com/sirupsen/logrus v1.9.3
 ## explicit; go 1.13
 github.com/sirupsen/logrus
-# github.com/urfave/cli v1.22.15
+# github.com/urfave/cli v1.22.16
 ## explicit; go 1.11
 github.com/urfave/cli
 # golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
